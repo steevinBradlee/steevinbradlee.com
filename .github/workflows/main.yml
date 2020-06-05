@@ -31,7 +31,7 @@ jobs:
 
     - name: Deploy to Heroku
       run: |
-        git push https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/steevinbradlee-site-dev.git HEAD:master
+        git push https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/steevinbradlee-site-dev.git origin/dev:master
 
     #- name: Login to Heroku Container registry
     #  env: 
