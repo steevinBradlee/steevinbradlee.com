@@ -2,10 +2,6 @@
 
 name: CI
 
-defaults:
-  run:
-    working-directory: ./portfolio-site
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -20,6 +16,10 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./portfolio-site
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
