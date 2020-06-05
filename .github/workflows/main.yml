@@ -17,10 +17,6 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./portfolio-site
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,17 +26,17 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
 
-    - name: Login to Heroku Container registry
-      env: 
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login 
+    #- name: Login to Heroku Container registry
+    #  env: 
+    #    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    #  run: heroku container:login 
 
-    - name: Build and push
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:push -a steevinbradlee-site-dev 
+    #- name: Build and push
+    #  env:
+    #    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    #  run: heroku container:push -a steevinbradlee-site-dev 
 
-    - name: Release
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:release -a steevinbradlee-site-dev 
+    #- name: Release
+    #  env:
+    #    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    #  run: heroku container:release -a steevinbradlee-site-dev 
