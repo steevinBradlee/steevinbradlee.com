@@ -29,6 +29,12 @@ jobs:
     - name: Push code to Heroku Git repo
       run: git push heroku dev:master
 
+    - name: Deploy to Heroku
+      env:
+        HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
+        HEROKU_APP_NAME: "steevinbradlee-site-dev"
+      run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git origin/dev:master
+
     #- name: Login to Heroku Container registry
     #  env: 
     #    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
