@@ -29,11 +29,13 @@ jobs:
     #- name: Push code to Heroku Git repo
     #  run: git push heroku dev:master
 
+    - name: Add remote origin
+      run: |
+        git remote add heroku https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/steevinbradlee-site-dev.git
+
     - name: Deploy to Heroku
-      env:
-        HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-        HEROKU_APP_NAME: "steevinbradlee-site-dev"
-      run: git push https://heroku:d6112ed7-f901-4e1a-9d0b-38373777f584@git.heroku.com/steevinbradlee-site-dev.git origin/dev:master
+      run: |
+        git push heroku origin/dev:master
 
     #- name: Login to Heroku Container registry
     #  env: 
