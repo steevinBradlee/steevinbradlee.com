@@ -3,4 +3,5 @@
 // If need, change your variables before importing Bulma
 $title-color: #ff0000;
 
-@import "~bulma/bulma.sass";
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/grid/columns.sass";

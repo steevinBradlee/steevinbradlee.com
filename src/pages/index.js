@@ -1,23 +1,68 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
 import Layout from '../components/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
+import './mystyles.scss';
+import { graphql, Link } from 'gatsby';
+import Dump from '../components/Dump';
+import ArticleTile from '../components/ArticleTile';
+import ArticleTileContainer from '../components/ArticleTileContainer';
+import styled from 'styled-components';
+import SEO from '../components/Seo';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title='Home' />
-    <h1>Hi Stephen! Your pipeline is finally working!</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to='/page-2/'>Go to page 2</Link> <br />
-    <Link to='/using-typescript/'>Go to 'Using TypeScript'</Link>
-  </Layout>
-);
+const avatar = require('../../public/github-pic.png');
 
-export default IndexPage;
+const AreaTitle = styled.h2`
+  background-color: black;
+  color: white;
+  padding: 8px 24px;
+`;
 
+export default ({ data }) => {
+  return (
+    <Layout>
+      <SEO title='Home' />
+      <div className='container'>
+        <div className='columns'>
+          <div className='column'>
+            <img src={avatar} alt='stephen-bradley.com profile'></img>
+          </div>
+          <div className='column is-four-fifths'>
+            {/* <Dump data={data} /> */}
+            <AreaTitle>recent</AreaTitle>
+            <ArticleTileContainer>
+              {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
+                <ArticleTile
+                  title={frontmatter.title}
+                  slug={fields.slug}
+                  tags={['react', 'gatsby']}
+                  previewText={excerpt}
+                  image={''}
+                />
+              ))}
+            </ArticleTileContainer>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query SITE_INDEX_QUERY {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
+      nodes {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          title
+          date
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;

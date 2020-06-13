@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => (
       <div style={{ display: 'flex' }}>
         <h1 style={{ margin: 0, paddingRight: '20px' }}>
           <Link
-            to="/"
+            to="/articles"
             style={{
               color: `white`,
               textDecoration: `none`,
@@ -43,7 +43,7 @@ const Header = ({ siteTitle }) => (
         </h1>
         <h1 style={{ margin: 0 }}>
           <Link
-            to="/"
+            to="/about"
             style={{
               color: `white`,
               textDecoration: `none`,
