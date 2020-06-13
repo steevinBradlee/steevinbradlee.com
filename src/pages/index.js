@@ -1,12 +1,12 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import './mystyles.scss';
 import { graphql, Link } from 'gatsby';
-import Dump from '../components/Dump';
-import ArticleTile from '../components/ArticleTile';
-import ArticleTileContainer from '../components/ArticleTileContainer';
+import Dump from '../components/dump';
+import ArticleTile from '../components/article-tile';
+import ArticleTileContainer from '../components/article-tile-container';
 import styled from 'styled-components';
-import SEO from '../components/Seo';
+import SEO from '../components/seo';
 
 import AvatarPic from '../../public/github-pic.png';
 
