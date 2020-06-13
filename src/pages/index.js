@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import './mystyles.scss';
 import { graphql, Link } from 'gatsby';
 import Dump from '../components/Dump';
@@ -8,7 +8,7 @@ import ArticleTileContainer from '../components/ArticleTileContainer';
 import styled from 'styled-components';
 import SEO from '../components/Seo';
 
-const avatar = require('../../public/github-pic.png');
+import AvatarPic from '../../public/github-pic.png';
 
 const AreaTitle = styled.h2`
   background-color: black;
@@ -23,7 +23,7 @@ export default ({ data }) => {
       <div className='container'>
         <div className='columns'>
           <div className='column'>
-            <img src={avatar} alt='stephen-bradley.com profile'></img>
+            <img src={AvatarPic} alt='stephen-bradley.com profile'></img>
           </div>
           <div className='column is-four-fifths'>
             {/* <Dump data={data} /> */}
