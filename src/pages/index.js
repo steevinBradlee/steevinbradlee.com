@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../components/layout';
 import './mystyles.scss';
 import { graphql, Link } from 'gatsby';
-import Dump from '../components/dump';
 import ArticleTile from '../components/article-tile';
 import ArticleTileContainer from '../components/article-tile-container';
 import styled from 'styled-components';
@@ -26,7 +25,6 @@ export default ({ data }) => {
             <img src={AvatarPic} alt='stephen-bradley.com profile'></img>
           </div>
           <div className='column is-four-fifths'>
-            {/* <Dump data={data} /> */}
             <AreaTitle>recent</AreaTitle>
             <ArticleTileContainer>
               {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
