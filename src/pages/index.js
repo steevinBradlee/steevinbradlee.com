@@ -8,7 +8,7 @@ import ArticleTileContainer from '../components/article-tile-container';
 import styled from 'styled-components';
 import SEO from '../components/seo';
 
-import AvatarPic from '../../public/github-pic.png';
+import AvatarPic from '../images/github-pic.png';
 
 const AreaTitle = styled.h2`
   background-color: black;
