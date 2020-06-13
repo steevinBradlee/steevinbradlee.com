@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Dump from '../components/dump';
+import Dump from '../components/Dump';
 import { Link } from 'gatsby';
 
 export default ({ data, pageContext }) => {
