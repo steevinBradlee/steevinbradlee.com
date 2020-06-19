@@ -5,3 +5,8 @@ $title-color: #ff0000;
 
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/grid/columns.sass";
+
+#gatsby-focus-wrapper {
+  height: 100vh;
+  position: relative;
+}

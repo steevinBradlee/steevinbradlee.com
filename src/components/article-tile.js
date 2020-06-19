@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 export const ArticleTitle = styled.h2`
+  margin: 0px;
+  padding: 10px 0px 15px 0px;
   > a {
     text-decoration: none;
     color: black;
@@ -27,11 +30,13 @@ export const FlexContainer = styled.a`
 
 const ArticleTile = (props) => (
   <div>
-    <img src={props.image}/>
+    <div>
+      <Link to={props.slug}><Img fluid={props.image} /></Link>
+    </div>
     <ArticleTitle>
       <Link to={props.slug}>{props.title}</Link>
     </ArticleTitle>
-    <div>{props.previewText}</div>
+    <div style={{paddingBottom: '10px'}}>{props.previewText}</div>
     <FlexContainer>
       {props.tags.map(tag => (
         <Tag>{tag}</Tag>

@@ -4,19 +4,18 @@ import styled from 'styled-components';
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 25px;
 `;
 
-const GridCell = styled.div`
-`;
+const GridCell = styled.div``;
 
 const ArticleTileContainer = (props) => (
   <Grid>
     {props.children.map(child => (
       <GridCell>{child}</GridCell>
-    ))
-
-    }
+    ))}
   </Grid>
 );
 

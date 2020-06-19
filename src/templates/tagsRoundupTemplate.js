@@ -1,37 +1,33 @@
 import React from 'react';
 import Layout from '../components/layout';
-import './mystyles.scss';
-import { graphql, Link } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Dump from '../components/Dump';
+import { Link } from 'gatsby';
 import ArticleTile from '../components/article-tile';
 import ArticleTileContainer from '../components/article-tile-container';
-import styled from 'styled-components';
 import SEO from '../components/seo';
+import TagsList from '../components/tags-list';
 
-import AvatarPic from '../images/profile.jpeg';
-
-const AreaTitle = styled.h2`
-  background-color: black;
-  color: white;
-  padding: 8px 24px;
-`;
-
-export default ({ data }) => {
+const tagsRoundupTemplate = ({ data, pageContext }) => {
+  //const { frontmatter, body } = data.mdx;
+  //const { previous, next } = pageContext;
+  const { tag } = pageContext;
+  const taggedArticles = data.allMdx.nodes.filter(node => {
+    return node.frontmatter.tags.indexOf(tag) > -1;
+  })
   return (
     <Layout>
-      <SEO title='Home' />
+      <SEO title='Tags' />
       <div className='container'>
         <div className='columns'>
           <div className='column'>
-            <img src={AvatarPic} alt='stephen-bradley.com profile'></img>
-            <p>
-              <div>Hello!</div>
-              <div style={{fontSize: '14px'}}>My name is <br/><b style={{color:'white',backgroundColor:'black'}}>Stephen Bradley</b><br/> and I like front-end development 👾</div>
-            </p>
+            <h3>tags</h3>
+            <TagsList />
           </div>
           <div className='column is-four-fifths'>
-            <AreaTitle>recent</AreaTitle>
+          <h2>Articles tagged {tag}</h2>
             <ArticleTileContainer>
-              {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
+              {taggedArticles.map(({ id, excerpt, frontmatter, fields }) => (
                 <ArticleTile
                   title={frontmatter.title}
                   slug={fields.slug}
@@ -45,11 +41,13 @@ export default ({ data }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
+
+export default tagsRoundupTemplate;
 
 export const query = graphql`
-  query SITE_INDEX_QUERY {
+  query TAGGED_ARTICLES_QUERY {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { eq: true } } }
