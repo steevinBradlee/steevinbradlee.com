@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
