@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import './header.scss';
 
-const documentGlobal = typeof document !== 'undefined' && document;
+//const documentGlobal = typeof document !== 'undefined' && document;
 
 const Header = ({ siteTitle }) => {
   const [ menuOpen, setMenuOpen ] = useState(false);
@@ -15,8 +15,10 @@ const Header = ({ siteTitle }) => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    let body = documentGlobal.body;
-    body.style.overflow = !menuOpen ? 'hidden' : 'initial';
+    if (typeof document !== `undefined`) {
+      let body = document.body;
+      body.style.overflow = !menuOpen ? 'hidden' : 'initial';
+    }
   }
 
   const MobileOverlay = styled.div`

@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 
-const windowGlobal = typeof window !== 'undefined' && window;
-const documentGlobal = typeof document !== 'undefined' && document;
+//const windowGlobal = typeof window !== 'undefined' && window
 
-const getWidth = () => windowGlobal.innerWidth 
-  || documentGlobal.documentElement.clientWidth 
-  || documentGlobal.body.clientWidth;
+const getWidth = () => {
+  if (typeof window !== `undefined` && typeof document !== `undefined`) {
+    return window.innerWidth 
+    || document.documentElement.clientWidth 
+    || document.body.clientWidth;
+  }
+  return null;
+}
 
 function useCurrentWitdh() {
   // save current window width in the state object
@@ -23,12 +27,16 @@ function useCurrentWitdh() {
       timeoutId = setTimeout(() => setWidth(getWidth()), 150);
     };
     // set resize listener
-    windowGlobal.addEventListener('resize', resizeListener);
+    if (typeof window !== `undefined`) {
+      window.addEventListener('resize', resizeListener);
+    }
 
     // clean up function
     return () => {
       // remove resize listener
-      windowGlobal.removeEventListener('resize', resizeListener);
+      if (typeof window !== `undefined`) {
+        window.removeEventListener('resize', resizeListener);
+      }
     }
   }, [])
 
