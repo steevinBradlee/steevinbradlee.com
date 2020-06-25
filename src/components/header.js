@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import useCurrentWidth from '../hooks/useCurrentWidth';
 import styled from 'styled-components';
-import HeaderContent from './header-content';
 
 import './header.scss';
+
+const documentGlobal = typeof document !== 'undefined' && document;
 
 const Header = ({ siteTitle }) => {
   const [ menuOpen, setMenuOpen ] = useState(false);
@@ -14,7 +15,7 @@ const Header = ({ siteTitle }) => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    let body = document.body;
+    let body = documentGlobal.body;
     body.style.overflow = !menuOpen ? 'hidden' : 'initial';
   }
 

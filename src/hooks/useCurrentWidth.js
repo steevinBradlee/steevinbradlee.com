@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const windowGlobal = typeof window !== 'undefined' && window;
+const documentGlobal = typeof document !== 'undefined' && document;
 
 const getWidth = () => windowGlobal.innerWidth 
-  || document.documentElement.clientWidth 
-  || document.body.clientWidth;
+  || documentGlobal.documentElement.clientWidth 
+  || documentGlobal.body.clientWidth;
 
 function useCurrentWitdh() {
   // save current window width in the state object
