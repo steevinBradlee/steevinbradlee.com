@@ -1,0 +1,9 @@
+.site-main-content {
+  padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .site-main-content {
+    padding: 0px 1.75rem;
+  }
+}

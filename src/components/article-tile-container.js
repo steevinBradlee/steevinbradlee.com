@@ -4,17 +4,23 @@ import styled from 'styled-components';
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 20px;
   row-gap: 25px;
-`;
 
-const GridCell = styled.div``;
+  @media (max-width: 550px) {
+    display: block;
+
+    > div {
+      padding-bottom: 17px;
+    }
+  }
+`;
 
 const ArticleTileContainer = (props) => (
   <Grid>
     {props.children.map(child => (
-      <GridCell>{child}</GridCell>
+      <div>{child}</div>
     ))}
   </Grid>
 );

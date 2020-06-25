@@ -20,17 +20,20 @@ export const Tag = styled.a`
   background-color: black;
   color: white;
   margin-right: 10px;
+  margin-bottom: 8px;
   padding: 4px 12px;
   font-family: sans-serif;
+  text-decoration: none;
 `;
 
-export const FlexContainer = styled.a`
+export const FlexContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const ArticleTile = (props) => (
   <div>
-    <div>
+    <div style={{height: '165px', overflow: 'hidden'}}>
       <Link to={props.slug}><Img fluid={props.image} /></Link>
     </div>
     <ArticleTitle>
@@ -39,7 +42,7 @@ const ArticleTile = (props) => (
     <div style={{paddingBottom: '10px'}}>{props.previewText}</div>
     <FlexContainer>
       {props.tags.map(tag => (
-        <Tag>{tag}</Tag>
+        <Tag href={`/articles/tags/${tag}`}>{tag}</Tag>
       ))}
     </FlexContainer>
   </div>

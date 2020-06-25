@@ -16,9 +16,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           {previous === false ? null : (
             <>
               {previous && (
-                <Link to={previous.fields.slug}>
+                <Link to={previous.fields.slug} style={{textDecoration:'none'}}>
                   <p>
-                    <div>👶 newer</div>
+                    <div>{'<<'} 👶</div>
                     <div>{previous.frontmatter.title}</div>
                   </p>
                 </Link>
@@ -30,9 +30,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           {next === false ? null : (
             <>
               {next && (
-                <Link to={next.fields.slug}>
+                <Link to={next.fields.slug} style={{textDecoration:'none'}}>
                   <p>
-                    <div style={{textAlign:'right'}}>🧙‍♂️ older</div>
+                    <div style={{textAlign:'right'}}>🧙‍♂️ {'>>'}</div>
                     <div>{next.frontmatter.title}</div>
                   </p>
                 </Link>

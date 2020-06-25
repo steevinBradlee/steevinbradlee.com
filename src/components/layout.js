@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import './layout.css';
+import './myLayout.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,36 +25,48 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          flexGrow: 1,
+          position: 'relative'
         }}
       >
-        <main>{children}</main>
-      </div>
-      <footer
-        style={{
-          padding: `1.0875rem 1.45rem`,
-          backgroundColor: '#EEE',
-          width: '100%'
-        }}
-      >
-        <div 
-          style={{
-            maxWidth: 960,
-            margin: `0 auto`
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
+        <div style={{
+          maxWidth: '768px',
+          margin: '1.45rem auto 0px'
+        }}>
+          <main class='site-main-content'>{children}</main>
+          <footer
+            style={{
+              padding: `1.0875rem 1.45rem`,
+              backgroundColor: '#EEE',
+              width: '100%',
+              position: 'absolute',
+              left: '0px',
+              height: '65px',
+              bottom: '-65px'
+
+            }}
+          >
+            <div 
+              style={{
+                maxWidth: '768px',
+                margin: `0 auto`,
+                flexGrow: 1,
+                textAlign: 'center'
+              }}
+            >
+              © stephen-bradley • {new Date().getFullYear()}
+            </div>
+          </footer>
         </div>
-      </footer>
-    </>
+      </div>
+    </div>
   )
 }
 

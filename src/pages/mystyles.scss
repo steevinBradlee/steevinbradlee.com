@@ -3,8 +3,13 @@
 // If need, change your variables before importing Bulma
 $title-color: #ff0000;
 
+// Hamburgers
+$hamburger-layer-color: white;
+
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/grid/columns.sass";
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "./pages.scss";
 
 #gatsby-focus-wrapper {
   height: 100vh;

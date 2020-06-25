@@ -6,4 +6,10 @@ const LeftRightDiv = styled.div`
   justify-content: space-between;
 `;
 
-export { LeftRightDiv };
+const MobileHide = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export { LeftRightDiv, MobileHide };

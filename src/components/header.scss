@@ -1,0 +1,73 @@
+.site-header {
+  background: black;
+  position: relative;
+
+  .site-header-outer {
+    margin: 0 auto;
+    max-width: 768px;
+    padding: 1.45rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    .site-title {
+      margin: 0;
+      font-size: 1.4rem;
+      position: relative;
+
+      > a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .nav-element {
+      margin: 0;
+      padding-right: 20px;
+      font-size: 1.4rem;
+
+      > a {
+        color: white;
+        text-decoration: none;;
+      }
+
+      &:last-child {
+        padding-right: 0px;
+      }
+    }
+
+    .hamburger {
+      position: absolute;
+      left: 0px;
+      z-index: 50;
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {  
+    .site-header-outer {
+      padding: 1.75rem;
+
+      .site-title {
+        font-size: 1.75rem;
+
+        &:after {
+          content: 'stephen-bradley.com';
+          margin: 0;
+          font-size: 1.75rem;
+          position: absolute;
+          z-index: 3;
+          left: 0px;
+          color: white;
+          width: 100%;
+          font-family: sans-serif;
+        }
+      }
+      
+      .nav-element {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}

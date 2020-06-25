@@ -4,16 +4,10 @@ import './mystyles.scss';
 import { graphql, Link } from 'gatsby';
 import ArticleTile from '../components/article-tile';
 import ArticleTileContainer from '../components/article-tile-container';
-import styled from 'styled-components';
 import SEO from '../components/seo';
+import { MobileHide } from '../components/shared-components';
 
 import AvatarPic from '../images/profile.jpeg';
-
-const AreaTitle = styled.h2`
-  background-color: black;
-  color: white;
-  padding: 8px 24px;
-`;
 
 export default ({ data }) => {
   return (
@@ -21,22 +15,22 @@ export default ({ data }) => {
       <SEO title='Home' />
       <div className='container'>
         <div className='columns'>
-          <div className='column'>
+          <MobileHide className='column'>
             <img src={AvatarPic} alt='stephen-bradley.com profile'></img>
             <p>
               <div>Hello!</div>
-              <div style={{fontSize: '14px'}}>My name is <br/><b style={{color:'white',backgroundColor:'black'}}>Stephen Bradley</b><br/> and I like front-end development 👾</div>
+              <div style={{fontSize: '0.8rem'}}>My name is <br/><b style={{color:'white',backgroundColor:'black'}}>Stephen Bradley</b><br/> and I like front-end development 👾</div>
             </p>
-          </div>
+          </MobileHide>
           <div className='column is-four-fifths'>
-            <AreaTitle>recent</AreaTitle>
+            <h2 class='area-title'>recent</h2>
             <ArticleTileContainer>
               {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
                 <ArticleTile
                   title={frontmatter.title}
                   slug={fields.slug}
                   tags={frontmatter.tags}
-                  previewText={excerpt}
+                  previewText={frontmatter.teaser}
                   image={frontmatter.featuredImage.childImageSharp.fluid}
                 />
               ))}
@@ -56,7 +50,6 @@ export const query = graphql`
     ) {
       nodes {
         id
-        excerpt(pruneLength: 250)
         frontmatter {
           title
           date
@@ -68,6 +61,7 @@ export const query = graphql`
               }
             }
           }
+          teaser
         }
         fields {
           slug

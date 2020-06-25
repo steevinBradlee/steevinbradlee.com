@@ -32,7 +32,7 @@ const tagsRoundupTemplate = ({ data, pageContext }) => {
                   title={frontmatter.title}
                   slug={fields.slug}
                   tags={frontmatter.tags}
-                  previewText={excerpt}
+                  previewText={frontmatter.teaser}
                   image={frontmatter.featuredImage.childImageSharp.fluid}
                 />
               ))}
@@ -54,7 +54,6 @@ export const query = graphql`
     ) {
       nodes {
         id
-        excerpt(pruneLength: 250)
         frontmatter {
           title
           date
@@ -66,6 +65,7 @@ export const query = graphql`
               }
             }
           }
+          teaser
         }
         fields {
           slug

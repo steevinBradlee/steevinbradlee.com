@@ -4,15 +4,9 @@ import './mystyles.scss';
 import { graphql, Link } from 'gatsby';
 import ArticleTile from '../components/article-tile';
 import ArticleTileContainer from '../components/article-tile-container';
-import styled from 'styled-components';
 import SEO from '../components/seo';
 import TagsList from '../components/tags-list';
-
-const AreaTitle = styled.h2`
-  background-color: black;
-  color: white;
-  padding: 8px 24px;
-`;
+import { MobileHide } from '../components/shared-components';
 
 export default ({ data }) => {
   return (
@@ -20,19 +14,19 @@ export default ({ data }) => {
       <SEO title='Home' />
       <div className='container'>
         <div className='columns'>
-          <div className='column'>
+          <MobileHide className='column'>
             <h3>tags</h3>
             <TagsList />
-          </div>
+          </MobileHide>
           <div className='column is-four-fifths'>
-            <AreaTitle>words</AreaTitle>
+            <h2 class='area-title'>words</h2>            
             <ArticleTileContainer>
               {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
                 <ArticleTile
                   title={frontmatter.title}
                   slug={fields.slug}
                   tags={frontmatter.tags}
-                  previewText={excerpt}
+                  previewText={frontmatter.teaser}
                   image={frontmatter.featuredImage.childImageSharp.fluid}
                 />
               ))}
@@ -52,7 +46,6 @@ export const query = graphql`
     ) {
       nodes {
         id
-        excerpt(pruneLength: 250)
         frontmatter {
           title
           date
@@ -64,6 +57,7 @@ export const query = graphql`
               }
             }
           }
+          teaser
         }
         fields {
           slug
