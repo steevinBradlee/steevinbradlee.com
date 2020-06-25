@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const getWidth = () => window.innerWidth 
+const windowGlobal = typeof window !== 'undefined' && window;
+
+const getWidth = () => windowGlobal.innerWidth 
   || document.documentElement.clientWidth 
   || document.body.clientWidth;
 
@@ -20,12 +22,12 @@ function useCurrentWitdh() {
       timeoutId = setTimeout(() => setWidth(getWidth()), 150);
     };
     // set resize listener
-    window.addEventListener('resize', resizeListener);
+    windowGlobal.addEventListener('resize', resizeListener);
 
     // clean up function
     return () => {
       // remove resize listener
-      window.removeEventListener('resize', resizeListener);
+      windowGlobal.removeEventListener('resize', resizeListener);
     }
   }, [])
 
