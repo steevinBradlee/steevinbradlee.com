@@ -12,6 +12,6 @@ $hamburger-layer-color: white;
 @import "./pages.scss";
 
 #gatsby-focus-wrapper {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
