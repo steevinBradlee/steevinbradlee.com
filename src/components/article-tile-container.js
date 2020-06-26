@@ -19,8 +19,8 @@ const Grid = styled.div`
 
 const ArticleTileContainer = (props) => (
   <Grid>
-    {props.children.map(child => (
-      <div>{child}</div>
+    {props.children.map((child, index) => (
+      <div key={`tile-${index}`}>{child}</div>
     ))}
   </Grid>
 );

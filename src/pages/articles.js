@@ -19,7 +19,7 @@ export default ({ data }) => {
             <TagsList />
           </MobileHide>
           <div className='column is-four-fifths'>
-            <h2 class='area-title'>words</h2>            
+            <h2 className='area-title'>words</h2>            
             <ArticleTileContainer>
               {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
                 <ArticleTile

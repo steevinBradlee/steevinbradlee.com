@@ -23,15 +23,16 @@ export default ({ data }) => {
             </p>
           </MobileHide>
           <div className='column is-four-fifths'>
-            <h2 class='area-title'>recent</h2>
+            <h2 className='area-title'>recent</h2>
             <ArticleTileContainer>
-              {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
+              {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }, index) => (
                 <ArticleTile
                   title={frontmatter.title}
                   slug={fields.slug}
                   tags={frontmatter.tags}
                   previewText={frontmatter.teaser}
                   image={frontmatter.featuredImage.childImageSharp.fluid}
+                  key={`article-tile-${index}`}
                 />
               ))}
             </ArticleTileContainer>

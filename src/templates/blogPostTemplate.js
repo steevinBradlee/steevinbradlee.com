@@ -1,15 +1,19 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const { frontmatter, body } = data.mdx;
   const { previous, next } = pageContext;
   return (
     <Layout>
-      <h1>{frontmatter.title}</h1>
+      <h1 style={{marginBottom: '10px'}}>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
+      <div className="article-image-container">
+        <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
+      </div>
       <MDXRenderer>{body}</MDXRenderer>
       <div style={{display:'flex'}}>
         <div style={{width:'50%',display:'flex',justifyContent:'flex-start'}}>
@@ -54,6 +58,13 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "YYYY MMMM Do")
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

@@ -34,15 +34,17 @@ export const FlexContainer = styled.div`
 const ArticleTile = (props) => (
   <div>
     <div style={{height: '165px', overflow: 'hidden'}}>
-      <Link to={props.slug}><Img fluid={props.image} /></Link>
+      <Link to={props.slug}>
+        <Img fluid={props.image} />
+      </Link>
     </div>
     <ArticleTitle>
       <Link to={props.slug}>{props.title}</Link>
     </ArticleTitle>
     <div style={{paddingBottom: '10px'}}>{props.previewText}</div>
     <FlexContainer>
-      {props.tags.map(tag => (
-        <Tag href={`/articles/tags/${tag}`}>{tag}</Tag>
+      {props.tags.map((tag, key) => (
+        <Tag key={`tag-${tag}-key`} href={`/articles/tags/${tag}`}>{tag}</Tag>
       ))}
     </FlexContainer>
   </div>
@@ -51,7 +53,7 @@ const ArticleTile = (props) => (
 ArticleTile.propTypes = {
   title: PropTypes.string,
   slug: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   tags: PropTypes.array,
   previewText: PropTypes.string
 }

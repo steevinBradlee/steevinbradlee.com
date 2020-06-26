@@ -11,7 +11,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import './layout.css';
-import './myLayout.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -40,7 +39,7 @@ const Layout = ({ children }) => {
           maxWidth: '768px',
           margin: '1.45rem auto 0px'
         }}>
-          <main class='site-main-content'>{children}</main>
+          <main className='site-main-content'>{children}</main>
           <footer
             style={{
               padding: `1.0875rem 1.45rem`,

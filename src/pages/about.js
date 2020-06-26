@@ -19,7 +19,7 @@ const AboutPage = () => {
             </p>
           </MobileHide>
           <div className='column is-four-fifths'>
-            <h2 class='area-title'>me me me</h2>
+            <h2 className='area-title'>me me me</h2>
             <div>
               <p>Stephen (not with a V) here. I'm originally from Ireland, somewhere in the middle. 
                 I studied Computer Science, Linguistics, and German at Trinity College Dublin,
