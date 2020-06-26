@@ -8,6 +8,23 @@
   padding-bottom: 25px;
 }
 
+.social-links {
+  > a {
+    margin-bottom: 10px;
+    text-decoration: none;
+    background: black;
+    color: white;
+    padding: 4px 8px;
+    font-family: serif;
+  }
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media (max-width: 768px) {
   .area-title {
     background-color: white;

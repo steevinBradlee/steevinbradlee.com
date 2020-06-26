@@ -37,7 +37,7 @@ const Header = ({ siteTitle }) => {
     <header className='site-header'>
       <div className='site-header-outer'>
         <CenterAligned>
-          <h1 className='site-title'>
+          <h1 className='site-title rainbow-text'>
             <Link to='/'>
               {siteTitle}
             </Link>

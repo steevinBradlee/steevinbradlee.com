@@ -19,7 +19,10 @@ export default ({ data }) => {
             <img src={AvatarPic} alt='stephen-bradley.com profile'></img>
             <p>
               <div>Hello!</div>
-              <div style={{fontSize: '0.8rem'}}>My name is <br/><b style={{color:'white',backgroundColor:'black'}}>Stephen Bradley</b><br/> and I like front-end development 👾</div>
+              <div style={{fontSize: '0.8rem', paddingBottom: '10px'}}>My name is <br/><b style={{color:'white',backgroundColor:'black'}}>Stephen Bradley</b><br/> and I like front-end development 👾</div>
+              <div className="social-links">
+                <a href="https://www.linkedin.com/in/stephenbradley93/">LinkedIn</a>
+              </div>
             </p>
           </MobileHide>
           <div className='column is-four-fifths'>
