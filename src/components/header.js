@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import useCurrentWidth from '../hooks/useCurrentWidth';
 import styled from 'styled-components';
+import { debounce } from 'lodash';
 
 import './header.scss';
 
@@ -19,16 +20,17 @@ const Header = ({ siteTitle }) => {
     if (typeof document !== `undefined`) {
       let body = document.body;
       body.style.overflow = !menuOpen ? 'hidden' : 'initial';
-      let overlay = document.querySelector('.mobile-overlay');
-      if (overlay) {
-        if (overlay.classList.contains('active')) {
-          overlay.classList.remove('active');
-        }
-        else {
-          overlay.classList.add('active');
-        }
-      }
     }
+  }
+
+  if (typeof window !== `undefined` && typeof document !== `undefined`) {
+    window.addEventListener('resize', debounce(() => {
+      let body = document.body;
+      body.style.overflow = 'initial';
+      if (menuOpen) {
+        toggleMenu();
+      }
+    }), 1000);
   }
 
   return (
@@ -57,7 +59,7 @@ const Header = ({ siteTitle }) => {
               <Link to='/about'>about</Link>
             </h1>
           </div>
-          <div className="mobile-overlay">
+          <div className={`mobile-overlay ${menuOpen && 'active'}`}>
             <div>
             <h1 className='nav-element'>
                 <Link to='/'>home</Link>
