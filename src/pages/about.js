@@ -24,7 +24,7 @@ const AboutPage = () => {
           <div className='column is-four-fifths'>
             <h2 className='area-title'>me me me</h2>
             <div>
-              <p>Stephen (not with a V) here. I'm originally from Ireland - the middle bit. 
+              <p>Stephen here. I'm originally from Ireland - the middle bit. 
                 I studied at Trinity College Dublin where I got my BA in Computer Science, Linguistics, 
                 and German.
               </p>
@@ -35,7 +35,7 @@ const AboutPage = () => {
                 consultant for the past few years. I've focused mostly on front-end customizations within SharePoint 
                 but my work also involves creating workflows and automation scripts. I work mostly with React, 
                 Node, and Typescript but enjoy dabbling in new frameworks and languages. I also have a 
-                secret love for Python but haven't really used it for my career...yet. 
+                secret love for Python.
               </p>
               <p>
                 My short term goal is to become a slick front-end dev and develop cool user experiences.
