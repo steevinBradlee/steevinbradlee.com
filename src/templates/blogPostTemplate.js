@@ -9,6 +9,10 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   const { previous, next } = pageContext;
   return (
     <Layout>
+      <div>
+        <i class="las la-arrow-left"></i>  
+        <span>articles</span>    
+      </div>
       <h1 style={{marginBottom: '10px'}}>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
       <div className="article-image-container">

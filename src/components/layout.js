@@ -1,16 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-
 import Header from './header';
-import './layout.css';
+//import './layout.css';
+import { Helmet } from 'react-helmet';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +18,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/css/line-awesome.min.css"
+        />
+      </Helmet>
       <div className="content-wrap">
         <Header siteTitle={data.site.siteMetadata.title} />
         <div

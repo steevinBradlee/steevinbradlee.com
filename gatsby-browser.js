@@ -7,6 +7,6 @@
 // You can delete this file if you're not using it
 import { wrapRootElement as wrap } from './root-wrapper';
 
-import './src/components/myLayout.css';
+import './src/styles/global.scss';
 
 export const wrapRootElement = wrap;

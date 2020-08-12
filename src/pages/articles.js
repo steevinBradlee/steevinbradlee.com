@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../components/layout';
-import './mystyles.scss';
 import { graphql, Link } from 'gatsby';
 import ArticleTile from '../components/article-tile';
 import ArticleTileContainer from '../components/article-tile-container';

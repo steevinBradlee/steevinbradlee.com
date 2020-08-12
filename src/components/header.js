@@ -53,7 +53,7 @@ const Header = ({ siteTitle }) => {
           </div>
           <div className="links-container">
             <h1 className='nav-element'>
-              <Link to='/articles'>words</Link>
+              <Link to='/articles'>articles</Link>
             </h1>
             <h1 className='nav-element'>
               <Link to='/about'>about</Link>

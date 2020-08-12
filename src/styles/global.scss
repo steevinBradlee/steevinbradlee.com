@@ -10,6 +10,8 @@ $hamburger-layer-color: white;
 @import "~bulma/sass/grid/columns.sass";
 @import "~hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "./pages.scss";
+@import "./layout.scss";
+@import "./myLayout.scss";
 
 #gatsby-focus-wrapper {
   min-height: 100vh;
