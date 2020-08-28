@@ -1,8 +1,18 @@
 .site-header {
-  background: black;
+  background: #001d4a;
   position: relative;
 
-  .site-header-outer {
+  .name-logo {
+    color: white;
+    letter-spacing: 14px;
+    font-size: 12px;
+  }
+
+  .level {
+    height: 82px;
+  }
+
+  /* .site-header-outer {
     margin: 0 auto;
     max-width: 768px;
     padding: 1.45rem 0;
@@ -71,7 +81,7 @@
         }
       }
     }
-  }
+  } */
 }
 
 @media (max-width: 768px) {

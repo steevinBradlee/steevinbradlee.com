@@ -5,13 +5,22 @@ $title-color: #ff0000;
 
 // Hamburgers
 $hamburger-layer-color: white;
+/* $hamburger-layer-width: 22px;
+$hamburger-layer-height: 3.8px;
+$hamburger-layer-spacing: 3.8px; */
 
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/grid/columns.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/components/level.sass";
 @import "~hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "./pages.scss";
 @import "./layout.scss";
 @import "./myLayout.scss";
+
+body {
+  font-family: sans-serif;
+}
 
 #gatsby-focus-wrapper {
   min-height: 100vh;

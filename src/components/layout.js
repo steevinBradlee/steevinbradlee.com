@@ -26,7 +26,12 @@ const Layout = ({ children }) => {
       </Helmet>
       <div className="content-wrap">
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
+        <div class="columns content-center">
+          <div class="column">
+            <main className='site-main-content'>{children}</main>
+          </div>
+        </div>
+        {/* <div
           style={{
             flex: 1,
             height: '100%'
@@ -41,7 +46,7 @@ const Layout = ({ children }) => {
           }}>
             <main className='site-main-content'>{children}</main>
           </div>
-        </div>
+        </div> */}
       </div>
       <footer
         style={{

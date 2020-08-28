@@ -35,7 +35,28 @@ const Header = ({ siteTitle }) => {
 
   return (
     <header className='site-header'>
-      <div className='site-header-outer'>
+      <div class="container">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <div class="name-logo">
+                <div>STEPHEN</div>
+                <div>BRADLEY</div>
+              </div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <button className={`hamburger hamburger--squeeze ${menuOpen && 'is-active'}`} type='button' onClick={toggleMenu}>
+                <span className='hamburger-box'>
+                  <span className='hamburger-inner'></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className='site-header-outer'>
         <CenterAligned>
           <h1 className='site-title rainbow-text'>
             <Link to='/'>
@@ -73,7 +94,7 @@ const Header = ({ siteTitle }) => {
             </div>
           </div>
         </CenterAligned>
-      </div> 
+      </div>  */}
     </header>
   );
 }
