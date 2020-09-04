@@ -2,7 +2,7 @@
 
 .about-hero {
   font-family: $font-primary;
-  color: white;
+  color: var(--color-primary);
   font-size: 24px;
 
   .big {
@@ -12,8 +12,8 @@
     user-select: none;
     padding-bottom: 33px;
 
-    .red {
-      color: $stephen-red;
+    .developer {
+      color: var(--color-secondary);
     }
 
     .location {
@@ -38,7 +38,7 @@
 
     > a {
       font-weight: bold;
-      color: white;
+      color: var(--color-primary);
       text-decoration: none;
       font-family: Sofia-Pro;
 

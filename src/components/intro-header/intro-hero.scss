@@ -2,7 +2,7 @@
 
 .intro-hero {
   font-family: $font-primary;
-  color: white;
+  color: var(--color-primary);
   font-size: 24px;
   height: 343px;
 
@@ -13,12 +13,12 @@
     user-select: none;
 
     .developer {
-      color: $stephen-red;
+      color: var(--color-secondary);
       position: relative;
     }
 
     .line {
-      border: solid thin white;
+      border: solid thin var(--color-primary);
       position: absolute;
 
       &.line1 {
@@ -44,7 +44,7 @@
     }
 
     .dots {
-      color: $stephen-blue;
+      color: var(--color-accent);
       position: absolute;
       left: 126px;
       top: 11px;

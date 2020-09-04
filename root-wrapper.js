@@ -1,7 +1,8 @@
 import { MDXProvider } from '@mdx-js/react';
 import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import Code from './src/components/Code';
+import Code from './src/components/code';
+import { ThemeProvider } from './src/components/theme-context';
 
 const components = {
   h2: ({ children }) => (
@@ -26,5 +27,7 @@ const components = {
 };
 
 export const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>{element}</MDXProvider>
+  <ThemeProvider>
+    <MDXProvider components={components}>{element}</MDXProvider>
+  </ThemeProvider>
 );

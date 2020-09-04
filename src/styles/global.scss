@@ -1,10 +1,10 @@
 @charset "utf-8";
 
 // If need, change your variables before importing Bulma
-$title-color: #ff0000;
+//$title-color: #ff0000;
 
 // Hamburgers
-$hamburger-layer-color: white;
+$hamburger-layer-color: var(--color-primary);
 /* $hamburger-layer-width: 22px;
 $hamburger-layer-height: 3.8px;
 $hamburger-layer-spacing: 3.8px; */
@@ -28,5 +28,5 @@ body {
 #gatsby-focus-wrapper {
   min-height: 100vh;
   position: relative;
-  background-color: $stephen-dark-primary;
+  background-color: var(--color-background);//$stephen-dark-primary;
 }

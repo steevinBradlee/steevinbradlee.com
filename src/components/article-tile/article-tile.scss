@@ -9,7 +9,7 @@
   
     > a {
       text-decoration: none;
-      color: white;
+      color: var(--color-primary);
       font-size: 18px;
     }
   
@@ -19,7 +19,7 @@
   }
 
   .preview-text {
-    color: white;
+    color: var(--color-primary);
     padding-bottom: 10px;
     font-size: 15px;
   }

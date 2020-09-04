@@ -4,7 +4,7 @@
   font-family: $font-primary;
   color: white;
   font-size: 24px;
-  background-color: $stephen-dark-cv;
+  background-color: var(--color-resumeBackground);
 
   .column {
     padding-top: 0px;
@@ -19,7 +19,7 @@
     .experience {
       padding-bottom: 30px;
       display: flex;
-      color: white;
+      color: var(--color-primary);
       font-family: $font-primary;
 
       &:first-child {
@@ -38,7 +38,7 @@
 
         .image-frame {
           height: 43px;
-          border: solid thin white;
+          border: solid thin var(--color-primary);
           margin-top: 6px;
         }
       }
@@ -57,7 +57,7 @@
 
             &:after {
               position: absolute;
-              border-left: solid thin white;
+              border-left: solid thin var(--color-primary);
               height: 82%;
               left: -17px;
               top: 26px;
@@ -81,7 +81,7 @@
           content: '';
           display: block;
           position: absolute;
-          background-color: white;
+          background-color: var(--color-primary);
           height: 6.5px;
           width: 6.5px;
           border-radius: 50%;
@@ -95,12 +95,12 @@
         }
   
         .sub-title {
-          color: white;
+          color: var(--color-primary);
           font-size: 16px;
         }
   
         .sub-sub-title {
-          color: white;
+          color: var(--color-primary);
           font-size: 14px;
         }
   
@@ -110,7 +110,7 @@
         }
   
         .body {
-          color: white;
+          color: var(--color-text);
           font-size: 14px;
           line-height: normal;
           padding-top: 4px;

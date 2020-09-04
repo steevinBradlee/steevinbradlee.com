@@ -20,7 +20,7 @@
       padding-bottom: 8px;
 
       > a {
-        color: white;
+        color: var(--color-primary);
         text-decoration: none;
         
         &:hover {
@@ -38,7 +38,7 @@
     } 
 
     .preview-text {
-      color: white;
+      color: var(--color-primary);
       padding-bottom: 20px;
       font-size: 14px;
       font-family: $font-primary;

@@ -8,6 +8,7 @@ import { debounce } from 'lodash';
 import Menu from './menu';
 
 import './header.scss';
+import DarkToggle from '../dark-toggle/dark-toggle';
 
 const Header = ({ siteTitle }) => {
   const [ menuOpen, setMenuOpen ] = useState(false);
@@ -103,6 +104,9 @@ const Header = ({ siteTitle }) => {
             </div>
           </div>
           <div className='level-right'>
+            <div className='level-item'>
+              <DarkToggle />
+            </div>
             <div className='level-item'>
               <button className={`hamburger hamburger--squeeze ${menuOpen && 'is-active'}`} type='button' onClick={toggleMenu}>
                 <span className='hamburger-box'>

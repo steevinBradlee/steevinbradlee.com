@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 
 .tag {
-  background-color: $stephen-blue;
+  background-color: var(--color-accent);
   color: white;
   margin-right: 10px;
   text-decoration: none;

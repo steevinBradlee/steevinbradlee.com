@@ -1,5 +1,5 @@
 #siteHeader {
-  background: #001d4a;
+  background: var(--color-background);
   position: relative;
 
   &.sticky {
@@ -18,7 +18,7 @@
   }
 
   .name-logo {
-    color: white;
+    color: var(--color-primary);
     letter-spacing: 14px;
     font-size: 12px;
     display: block;
@@ -124,14 +124,14 @@
   .menu-container {
     .columns {
       height: 510px;
-      background-color: black;
+      background-color: var(--color-menuBackground);
       margin: 0px;
 
       .column {
         max-width: 992px;
 
         .menu-item {
-          color: white;
+          color: var(--color-primary);
           text-decoration: none;
           font-size: 110px;
           font-weight: bold;
