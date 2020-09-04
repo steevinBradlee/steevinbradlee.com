@@ -9,6 +9,9 @@ $hamburger-layer-color: white;
 $hamburger-layer-height: 3.8px;
 $hamburger-layer-spacing: 3.8px; */
 
+//@use "./_variables.scss";
+@import "../styles/_variables.scss";
+
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/grid/columns.sass";
 @import "~bulma/sass/elements/container.sass";
@@ -25,4 +28,5 @@ body {
 #gatsby-focus-wrapper {
   min-height: 100vh;
   position: relative;
+  background-color: $stephen-dark-primary;
 }

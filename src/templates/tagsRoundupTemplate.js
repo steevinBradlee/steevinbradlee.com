@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Dump from '../components/Dump';
 import { Link } from 'gatsby';
-import ArticleTile from '../components/article-tile';
+import ArticleTile from '../components/article-tile/article-tile';
 import ArticleTileContainer from '../components/article-tile-container';
 import SEO from '../components/seo';
 import TagsList from '../components/tags-list';

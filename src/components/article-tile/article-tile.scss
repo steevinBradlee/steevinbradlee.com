@@ -1,0 +1,33 @@
+@import "../../styles/_variables";
+
+.article-tile {
+
+  .article-title {
+    margin: 0px;
+    padding: 15px 0px 8px 0px;
+    font-weight: bold;
+  
+    > a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+  
+    > a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .preview-text {
+    color: white;
+    padding-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .date {
+    color: $stephen-dark-gray;
+    font-size: 14px;
+    font-family: Sofia-Pro-SemiBold, sans-serif;
+    padding-bottom: 10px;
+  }
+}

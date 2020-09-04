@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.tag {
+  background-color: $stephen-blue;
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 13px;
+  font-size: 13px;
+  padding: 0px 11.5px;
+  height: 26px;
+  font-family: $font-primary;
+}

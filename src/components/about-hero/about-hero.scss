@@ -1,0 +1,54 @@
+@import "../../styles/_variables.scss";
+
+.about-hero {
+  font-family: $font-primary;
+  color: white;
+  font-size: 24px;
+
+  .big {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: normal;
+    user-select: none;
+    padding-bottom: 33px;
+
+    .red {
+      color: $stephen-red;
+    }
+
+    .location {
+      background-image: url('../../images/boston-cropped.gif'); 
+      background-repeat: repeat; 
+      background-size: cover;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+      -webkit-font-smoothing: antialiased; 
+    }
+  }
+
+  .small {
+    line-height: normal;
+    max-width: 564px;
+    padding-bottom: 53px;
+  }
+
+  .links {
+    display: inline-flex;
+    align-items: center;
+
+    > a {
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      font-family: Sofia-Pro;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .spacer {
+      padding: 0px 5px;
+    }
+  }
+}

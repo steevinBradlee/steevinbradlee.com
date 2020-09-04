@@ -1,0 +1,25 @@
+@import "../../styles/_variables.scss";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  .number-button {
+    margin-right: 7px;
+    background-color: $stephen-button-gray;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 0px 10px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    &.current {
+      background-color: white;
+      color: black;
+    }
+  }
+}

@@ -3,28 +3,22 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import Tag from '../tag/tag';
 
-export const ArticleTitle = styled.h2`
+import './article-tile.scss';
+
+/* export const ArticleTitle = styled.h2`
   margin: 0px;
   padding: 10px 0px 15px 0px;
   > a {
     text-decoration: none;
-    color: black;
+    color: white;
+    font-size: 18px;
   }
   > a:hover {
     text-decoration: underline;
   }
-`;
-
-export const Tag = styled.a`
-  background-color: black;
-  color: white;
-  margin-right: 10px;
-  margin-bottom: 8px;
-  padding: 4px 12px;
-  font-family: sans-serif;
-  text-decoration: none;
-`;
+`; */
 
 export const FlexContainer = styled.div`
   display: flex;
@@ -32,19 +26,21 @@ export const FlexContainer = styled.div`
 `;
 
 const ArticleTile = (props) => (
-  <div>
-    <div style={{height: '165px', overflow: 'hidden'}}>
+  <div className='article-tile'>
+    <div style={{height: '250px', overflow: 'hidden'}}>
       <Link to={props.slug}>
         <Img fluid={props.image} />
       </Link>
     </div>
-    <ArticleTitle>
+    <div className='article-title'>
       <Link to={props.slug}>{props.title}</Link>
-    </ArticleTitle>
-    <div style={{paddingBottom: '10px'}}>{props.previewText}</div>
+    </div>
+    <div className='date'>03/07/20</div>
+    {/* <div className='preview-text'>{props.previewText}</div> */}
     <FlexContainer>
       {props.tags.map((tag, key) => (
-        <Tag key={`tag-${tag}-key`} href={`/articles/tags/${tag}`}>{tag}</Tag>
+        <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${tag}`}/>
+        //<a className='tag' key={`tag-${tag}-key`} href={`/articles/tags/${tag}`}>{tag}</a>
       ))}
     </FlexContainer>
   </div>

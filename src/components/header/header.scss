@@ -1,18 +1,36 @@
-.site-header {
+#siteHeader {
   background: #001d4a;
   position: relative;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+  }
+
+  &.sticky + main {
+    padding-top: 82px;
+  }
+
+  .container {
+    max-width: 992px
+  }
 
   .name-logo {
     color: white;
     letter-spacing: 14px;
     font-size: 12px;
+    display: block;
+    text-decoration: none;
+    user-select: none;
   }
 
   .level {
     height: 82px;
   }
 
-  /* .site-header-outer {
+  /* .siteHeader-outer {
     margin: 0 auto;
     max-width: 768px;
     padding: 1.45rem 0;
@@ -84,9 +102,52 @@
   } */
 }
 
+.menu {
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: 0px;
+  width: 100%;
+  height: calc(100vh - 82px);
+  top: 82px;
+  transition: opacity 0.5s;
+  filter:alpha(opacity=0);
+  transition:200ms ease;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-container {
+    .columns {
+      height: 510px;
+      background-color: black;
+      margin: 0px;
+
+      .column {
+        max-width: 992px;
+
+        .menu-item {
+          color: white;
+          text-decoration: none;
+          font-size: 110px;
+          font-weight: bold;
+          display: block;
+          line-height: initial;
+          cursor: pointer;
+          font-family: Sofia-Pro;
+        }
+      }
+    }
+  }    
+}
+
 @media (max-width: 768px) {
-  .site-header {  
-    .site-header-outer {
+  .siteHeader {  
+    .siteHeader-outer {
       padding: 1.75rem;
 
       .hamburger-container {

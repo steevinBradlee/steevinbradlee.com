@@ -1,0 +1,121 @@
+@import "../../styles/_variables.scss";
+
+.resume {
+  font-family: $font-primary;
+  color: white;
+  font-size: 24px;
+  background-color: $stephen-dark-cv;
+
+  .column {
+    padding-top: 0px;
+
+    .area-title {
+      padding-bottom: 47px;
+    }
+  }
+
+  .experience-rows {
+
+    .experience {
+      padding-bottom: 30px;
+      display: flex;
+      color: white;
+      font-family: $font-primary;
+
+      &:first-child {
+        padding-top: 0px;
+      }
+
+      &:last-child {
+        .right {
+          border-bottom: none;
+        }
+      }
+
+      .left {
+        flex-basis: 18%;
+        padding-right: 17px;
+
+        .image-frame {
+          height: 43px;
+          border: solid thin white;
+          margin-top: 6px;
+        }
+      }
+
+      .right {
+        flex-basis: 82%;
+        padding-bottom: 30px;
+        border-bottom: solid thin rgba(255, 255, 255, 0.3);
+
+        .time-span {
+          padding-top: 20px;
+
+          .time-point {
+            padding-bottom: 20px;
+            position: relative;
+
+            &:after {
+              position: absolute;
+              border-left: solid thin white;
+              height: 82%;
+              left: -17px;
+              top: 26px;
+              display: block;
+              content: '';
+            }
+
+            &:last-child:after {
+              display: none;
+            }
+          }
+        }
+  
+        .time-point .sub-title {
+          position: relative;
+          left: 0px;
+          padding-bottom: 2px;
+        }
+  
+        .time-point .sub-title:before {
+          content: '';
+          display: block;
+          position: absolute;
+          background-color: white;
+          height: 6.5px;
+          width: 6.5px;
+          border-radius: 50%;
+          left: -20px;
+          top: 12px;
+        }
+  
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+        }
+  
+        .sub-title {
+          color: white;
+          font-size: 16px;
+        }
+  
+        .sub-sub-title {
+          color: white;
+          font-size: 14px;
+        }
+  
+        .detail {
+          color: rgba(255, 255, 255, 0.75);
+          font-size: 14px;
+        }
+  
+        .body {
+          color: white;
+          font-size: 14px;
+          line-height: normal;
+          padding-top: 4px;
+        }
+      }
+    }
+  }
+}
