@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './about-hero.scss'; 
+import LilSteve from '../../images/lil-deebz.svg';
 
 const AboutHero = () => (
   <div className='about-hero'>
@@ -15,6 +16,9 @@ const AboutHero = () => (
       <a href='https://www.linkedin.com/in/stephenbradley93/'>LinkedIn</a>
       <span className='spacer'>|</span>
       <a>CV</a>
+    </div>
+    <div className='steve-box'>
+      <img src={LilSteve} />
     </div>
   </div>
 );

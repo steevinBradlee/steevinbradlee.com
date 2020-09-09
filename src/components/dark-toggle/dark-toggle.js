@@ -1,6 +1,8 @@
 import React from 'react';
 import { ThemeContext } from '../theme-context';
 
+import './dark-toggle.scss';
+
 const DarkToggle = () => {
   const { colorMode, setColorMode } = React.useContext(ThemeContext);
 
@@ -17,7 +19,6 @@ const DarkToggle = () => {
           setColorMode(ev.target.checked ? 'dark' : 'light');
         }}
       />
-      <span>{ colorMode === 'dark' ? 'dark' : 'light'}</span>
     </label>
   );
 };

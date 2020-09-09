@@ -1,5 +1,5 @@
 import React from 'react';
-import { COLOR_MODE_STORAGE_KEY } from '../consts';
+import { COLOR_MODE_STORAGE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../consts';
 import { COLORS } from '../consts';
 
 function getInitialColorMode() {
@@ -24,18 +24,25 @@ function getInitialColorMode() {
 export const ThemeContext = React.createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [colorMode, rawSetColorMode] = React.useState(getInitialColorMode);
+  const [colorMode, rawSetColorMode] = React.useState(undefined);
 
   const storageKey = COLOR_MODE_STORAGE_KEY;
+  const initialColorModeCssProp = INITIAL_COLOR_MODE_CSS_PROP;
 
-  const setColorMode = (value) => {
+  React.useEffect(() => {
     const root = window.document.documentElement;
-    rawSetColorMode(value);
-    window.localStorage.setItem(storageKey, value);
+    const initialColorValue = root.style.getPropertyValue(initialColorModeCssProp);
+    rawSetColorMode(initialColorValue);
+  }, []);
+
+  const setColorMode = (newValue) => {
+    const root = window.document.documentElement;
+    window.localStorage.setItem(storageKey, newValue);
     Object.entries(COLORS).forEach(([name, colorByTheme]) => {
       const cssVarName = `--color-${name}`;
-      root.style.setProperty(cssVarName, colorByTheme[value]);
+      root.style.setProperty(cssVarName, colorByTheme[newValue]);
     });
+    rawSetColorMode(newValue);
   }
 
   return (
