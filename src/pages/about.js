@@ -11,7 +11,7 @@ const AboutPage = () => {
     <Layout>
       <SEO title='About' />
       <div className='columns is-centered'>
-        <div className='column content-center'>
+        <div className='column content-center' style={{paddingBottom: '0px'}}>
           <div style={{paddingTop: '71px'}}>
             <AboutHero />
           </div>

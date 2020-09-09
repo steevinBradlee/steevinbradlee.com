@@ -56,6 +56,10 @@
   .steve-box {
     position: absolute;
     right: 0px;
-    bottom: 0px;
+    bottom: -5px;
+
+    img {
+      margin: 0px;
+    }
   }
 }
