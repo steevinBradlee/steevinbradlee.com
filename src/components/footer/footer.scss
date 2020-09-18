@@ -4,7 +4,7 @@
   position: absolute;
   bottom: 0;
   padding: 32px 0px 31px 0px;
-  background-color: $stephen-dark-primary;
+  background-color: var(--color-background);
   width: 100%;
   font-family: Sofia-Pro-Regular, sans-serif;
   font-size: 10px;
@@ -15,5 +15,6 @@
     flex-grow: 1;
     text-align: center;
     color: white;
+    color: var(--color-primary);
   }
 }

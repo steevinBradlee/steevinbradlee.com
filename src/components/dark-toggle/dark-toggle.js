@@ -11,7 +11,8 @@ const DarkToggle = () => {
   }
 
   return (
-    <label className={'dark-toggle'}>
+    <label className={`dark-toggle ${colorMode === 'dark' ? 'dark' : ''}`} >
+      {/* <img src={colorMode === 'dark' ? MOON : SUN} /> */}
       <input 
         type='checkbox'
         checked={colorMode === 'dark'}

@@ -15,7 +15,7 @@ export const COLORS = {
     dark: 'black'
   },
   resumeBackground: {
-    light: 'white',
+    light: '#dbdfe3',
     dark: '#000A19'
   },
   primary: {
@@ -42,4 +42,8 @@ export const COLORS = {
     light: '#d8d8d8',
     dark: '#d8d8d8'
   },
+  lightBorder: {
+    light: 'rgba(0, 0, 0, 0.3)',
+    dark: 'rgba(255, 255, 255, 0.3)'
+  }
 };

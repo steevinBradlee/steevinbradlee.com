@@ -1,17 +1,19 @@
 #siteHeader {
   background: var(--color-background);
-  position: relative;
+  //position: relative;
+  transition: box-shadow 0.25s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
 
   &.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 5;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
   }
 
-  &.sticky + main {
+  /* &.sticky + main {
     padding-top: 82px;
-  }
+  } */
 
   .container {
     max-width: 992px
@@ -28,6 +30,10 @@
 
   .level {
     height: 82px;
+
+    .hamburger {
+      display: flex;
+    }
   }
 
   /* .siteHeader-outer {
@@ -112,8 +118,8 @@
   height: calc(100vh - 82px);
   top: 82px;
   transition: opacity 0.5s;
-  filter:alpha(opacity=0);
-  transition:200ms ease;
+  filter: alpha(opacity=0);
+  transition: 200ms ease;
   background-color: rgba(0, 0, 0, 0.7);
 
   &.is-active {

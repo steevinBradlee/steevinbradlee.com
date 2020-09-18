@@ -1,5 +1,18 @@
 .dark-toggle {
+  transition: 0.5s; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../../images/sun.png');
+  height: 30px;
+  width: 30px;
+
+  &.dark {
+    transform: rotate(360deg);
+    background-image: url('../../images/moon-half.png');
+  }
+
   input { 
-    /* display: none; */
+    display: none;
   }
 }

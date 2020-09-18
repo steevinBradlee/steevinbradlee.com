@@ -18,12 +18,26 @@
     }
 
     .location {
-      background-image: url('../../images/boston-cropped.gif'); 
-      background-repeat: repeat; 
-      background-size: cover;
-      background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      -webkit-font-smoothing: antialiased; 
+      span {
+        background-image: url('../../images/boston-cropped.gif'); 
+        background-repeat: repeat; 
+        background-size: cover;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        -webkit-font-smoothing: antialiased; 
+      }
+
+      &:hover {
+        background-image: url('../../images/boston-cropped.gif'); 
+        background-repeat: repeat; 
+        background-size: cover;
+        span {
+          background-clip: initial;
+          color: white;
+          -webkit-text-fill-color: initial;
+          background-image: none;
+        }
+      }
     }
   }
 

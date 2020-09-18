@@ -46,7 +46,7 @@
       .right {
         flex-basis: 82%;
         padding-bottom: 30px;
-        border-bottom: solid thin rgba(255, 255, 255, 0.3);
+        border-bottom: solid thin var(--color-lightBorder);
 
         .time-span {
           padding-top: 20px;
@@ -65,8 +65,11 @@
               content: '';
             }
 
-            &:last-child:after {
-              display: none;
+            &:last-child {
+              padding-bottom: 0px;
+              &:after {
+                display: none;
+              }
             }
           }
         }

@@ -17,18 +17,21 @@ const Header = ({ siteTitle }) => {
 
   const toggleMenu = () => {
     let newMenuOpen = !menuOpen;
-    setMenuOpen(newMenuOpen);
+    //setMenuOpen(newMenuOpen);
     let body = document.body;
     if (newMenuOpen) {
-      const scrollY = window.scrollY;//document.documentElement.style.getPropertyValue('--scroll-y');
+      setMenuOpen(true)
+      const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+      //const scrollY = window.scrollY;//document.documentElement.style.getPropertyValue('--scroll-y');
       body.style.position = 'fixed';
       body.style.top = `-${scrollY}px`;
     }
     else {
       const scrollY = body.style.top;
-      body.style.position = 'initial';
+      body.style.position = '';
       body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      setMenuOpen(false);
     }
     //body.style.height = newMenuOpen ? '100vh' : 'initial';
     /* if (typeof document !== `undefined`) {
@@ -54,12 +57,13 @@ const Header = ({ siteTitle }) => {
     }), 1000);
 
     window.onscroll = () => {
+      document.documentElement.style.setProperty('--scroll-y', window.scrollY);
       let body = document.body;
       if (headerRef.current) {
         var header = headerRef.current;
         var sticky = header.offsetTop;
-
-        if (window.pageYOffset > sticky || parseInt(body.style.top && body.style.top.replace('px', '')) != 0) {
+        const yOffset = parseFloat(document.documentElement.style.getPropertyValue('--scroll-y'));
+        if (yOffset > sticky || (body.style.top != '' && parseFloat(body.style.top.replace('px', '')) != 0)) {
           header.classList.add('sticky');
         } 
         else {

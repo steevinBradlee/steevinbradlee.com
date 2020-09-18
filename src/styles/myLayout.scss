@@ -8,6 +8,7 @@ button:focus {
 
 .content-center {
   max-width: 992px;
+  padding-top: 82px;
 }
 
 .site-main-content {
@@ -16,6 +17,10 @@ button:focus {
 
 body {
   width: 100%;
+}
+
+img {
+  margin: 0px;
 }
 
 @media (max-width: 768px) {

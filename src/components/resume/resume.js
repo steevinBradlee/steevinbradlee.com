@@ -11,7 +11,7 @@ const Resume = () => (
           <div className='experience'>
             <div className='left'>
               <div className='image-frame'>
-                <img src/>
+                <img src=''/>
               </div>
             </div>
             <div className='right'>
@@ -39,7 +39,7 @@ const Resume = () => (
           <div className='experience'>
             <div className='left'>
               <div className='image-frame'>
-                <img src/>
+                <img src=''/>
               </div>
             </div>
             <div className='right'>
@@ -53,7 +53,7 @@ const Resume = () => (
           <div className='experience'>
             <div className='left'>
               <div className='image-frame'>
-                <img src/>
+                <img src=''/>
               </div>
             </div>
             <div className='right'>
