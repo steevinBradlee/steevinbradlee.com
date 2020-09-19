@@ -16,7 +16,7 @@ export default ({ data }) => {
     setPage(pageNum);
   };
 
-  const numItemsPerPage = 1;
+  const numItemsPerPage = 8;
   const startIndex = (page) * numItemsPerPage;
   const endIndex = (page + 1) * numItemsPerPage;
 
@@ -35,7 +35,6 @@ export default ({ data }) => {
               tags={frontmatter.tags}
               previewText={frontmatter.teaser ? frontmatter.teaser : excerpt}
               image={frontmatter.featuredImage.childImageSharp.fluid}
-              style={{paddingBottom: '40px'}}
             />
           ))}
         </div>
