@@ -47,6 +47,27 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 440px) {
+  .article-preview {
+    display: block;
+    margin-bottom: 48px;
 
+    .left {
+      height: 175px;
+      width: initial;
+      margin-bottom: 15px;
+    }
+
+    .right {
+      padding-left: 0px;
+
+      .date {
+        padding-bottom: 8px;
+      }
+      
+      .preview-text {
+        padding-bottom: 10px;
+      }
+    }
+  }
 }
