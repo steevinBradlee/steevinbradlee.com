@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
 import ArticleTile from '../components/article-tile/article-tile';
-import ArticleTileContainer from '../components/article-tile-container';
+import ArticleTileContainer from '../components/article-tile-container/article-tile-container';
 import SEO from '../components/seo';
 import TagsList from '../components/tags-list';
 import { MobileHide } from '../components/shared-components';
@@ -16,7 +16,7 @@ export default ({ data }) => {
     setPage(pageNum);
   };
 
-  const numItemsPerPage = 1;
+  const numItemsPerPage = 8;
   const startIndex = (page) * numItemsPerPage;
   const endIndex = (page + 1) * numItemsPerPage;
 
@@ -35,7 +35,6 @@ export default ({ data }) => {
               tags={frontmatter.tags}
               previewText={frontmatter.teaser ? frontmatter.teaser : excerpt}
               image={frontmatter.featuredImage.childImageSharp.fluid}
-              style={{paddingBottom: '40px'}}
             />
           ))}
         </div>

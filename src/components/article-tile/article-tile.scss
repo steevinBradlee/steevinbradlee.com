@@ -1,4 +1,4 @@
-@import "../../styles/_variables";
+@import '../../styles/_variables';
 
 .article-tile {
 
@@ -25,9 +25,10 @@
   }
 
   .date {
-    color: $stephen-dark-gray;
+    color: var(--color-textAccentDarkest);
     font-size: 14px;
     font-family: Sofia-Pro-SemiBold, sans-serif;
     padding-bottom: 10px;
+    font-weight: 600;
   }
 }

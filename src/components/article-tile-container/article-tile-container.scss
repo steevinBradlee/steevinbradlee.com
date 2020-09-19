@@ -1,0 +1,14 @@
+.article-tile-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+  row-gap: 25px;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+
+    > div {
+      padding-bottom: 22px;
+    }
+  }
+}
