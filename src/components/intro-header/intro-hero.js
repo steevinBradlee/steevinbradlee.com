@@ -5,7 +5,7 @@ import './intro-hero.scss';
 const IntroHero = () => (
   <div className='intro-hero'>
     <div className='big'>
-      <div>Hey,</div>
+      <div>Hey, </div>
       <div>
         <span>I'm a <span className='developer'>developer<div className='line line1'></div>
         <div className='dots'>.....</div>

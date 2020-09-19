@@ -5,8 +5,8 @@ import LilSteve from '../../images/lil-deebz.svg';
 
 const AboutHero = () => (
   <div className='about-hero'>
-    <div className='big'>Hi, I’m Stephen Bradley.<br />
-      An Irish <span className='developer'>developer</span> currently<br />
+    <div className='big'>Hi, I’m Stephen Bradley.
+      An Irish <span className='developer'>developer</span> currently
       working in <span className='location'><span>Boston</span></span>.
     </div>
     <div className='small'>Interested in working together? Feel free to contact me for potential projects or collaborations.</div>

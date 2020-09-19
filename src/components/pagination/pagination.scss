@@ -6,8 +6,8 @@
 
   .number-button {
     margin-right: 7px;
-    background-color: $stephen-button-gray;
-    color: white;
+    background-color: var(--color-paginationBtn);
+    color: var(--color-primary);
     border: none;
     border-radius: 2px;
     font-size: 14px;
@@ -18,8 +18,8 @@
     }
 
     &.current {
-      background-color: white;
-      color: black;
+      background-color: var(--color-primary);
+      color: var(--color-primaryFlipped);
     }
   }
 }

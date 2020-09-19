@@ -98,20 +98,20 @@ const Header = ({ siteTitle }) => {
   return (
     <header id='siteHeader' ref={headerRef}>
       <div className='container'>
-        <div className='level'>
-          <div className='level-left'>
-            <div className='level-item'>
+        <div>
+          <div className='left'>
+            <div>
               <Link onClick={resetPage} to='/' className='name-logo'>
                 <div>STEPHEN</div>
                 <div>BRADLEY</div>
               </Link>
             </div>
           </div>
-          <div className='level-right'>
-            <div className='level-item'>
+          <div className='right'>
+            <div>
               <DarkToggle />
             </div>
-            <div className='level-item'>
+            <div>
               <button className={`hamburger hamburger--squeeze ${menuOpen && 'is-active'}`} type='button' onClick={toggleMenu}>
                 <span className='hamburger-box'>
                   <span className='hamburger-inner'></span>

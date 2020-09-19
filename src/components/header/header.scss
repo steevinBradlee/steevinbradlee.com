@@ -1,10 +1,10 @@
 #siteHeader {
   background: var(--color-background);
-  //position: relative;
   transition: box-shadow 0.25s;
   position: fixed;
   top: 0;
-  width: 100%;
+  //width: 100%;
+  width: 100vw;
   z-index: 5;
 
   &.sticky {
@@ -16,7 +16,27 @@
   } */
 
   .container {
-    max-width: 992px
+    max-width: 992px;
+    padding: 0px 1.5rem;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 82px;
+
+      .left {
+      }
+  
+      .right {
+        display: flex;
+        align-items: center;
+
+        > div:first-child {
+          margin-right: 15px;
+        }
+      }
+    }
   }
 
   .name-logo {
@@ -28,84 +48,9 @@
     user-select: none;
   }
 
-  .level {
-    height: 82px;
-
-    .hamburger {
-      display: flex;
-    }
-  }
-
-  /* .siteHeader-outer {
-    margin: 0 auto;
-    max-width: 768px;
-    padding: 1.45rem 0;
+  .hamburger {
     display: flex;
-    justify-content: space-between;
-
-    .site-title {
-      margin: 0;
-      font-size: 1.4rem;
-      position: relative;
-
-      > a {
-        color: white;
-        text-decoration: none;
-      }
-    }
-
-    .hamburger-container {
-      display: none;
-      position: relative;
-      width: 71px;
-      height: 60px;
-    }
-
-    .links-container {
-      display: flex;
-    }
-
-    .nav-element {
-      margin: 0;
-      padding-right: 20px;
-      font-size: 1.4rem;
-
-      > a {
-        color: white;
-        text-decoration: none;;
-      }
-
-      &:last-child {
-        padding-right: 0px;
-      }
-    }
-
-    .hamburger {
-      position: absolute;
-      left: 0px;
-      z-index: 50;
-      outline: none;
-    }
-
-    .mobile-overlay {
-      display: none;
-      position: fixed;
-      height: 100vh;
-      width: 100%;
-      left: 0px;
-      top: 0px;
-      z-index: 2;
-      background: black;
-  
-      > div {
-        padding: 6rem 1.75rem;
-  
-        > h1 {
-          padding-bottom: 1rem;
-        }
-      }
-    }
-  } */
+  }
 }
 
 .menu {
@@ -145,48 +90,24 @@
           line-height: initial;
           cursor: pointer;
           font-family: Sofia-Pro;
+
+          &:hover {
+            color: var(--color-secondary);
+          }
         }
       }
     }
   }    
 }
 
-@media (max-width: 768px) {
-  .siteHeader {  
-    .siteHeader-outer {
-      padding: 1.75rem;
-
-      .hamburger-container {
-        display: block;
-      }
-
-      .site-title {
-        font-size: 1.75rem;
-
-        /* &:after {
-          content: 'ヽ(°〇°)ﾉ	';
-          margin: 0;
-          font-size: 1.75rem;
-          position: absolute;
-          z-index: 3;
-          left: 0px;
-          color: white;
-          width: 100%;
-          font-family: sans-serif;
-        } */
-      }
-
-      .links-container{
-        display: none;
-      }
-      
-      .nav-element {
-        font-size: 1.75rem;
-      }
-
-      .mobile-overlay.active {
-        display: block;
-      }
+@media screen and (max-width: 768px) {
+  #siteHeader {
+    .level {
+      display: flex;
     }
   }
+}
+
+@media screen and (max-width: 440px) {
+
 }

@@ -1,10 +1,17 @@
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { MobileHide } from '../components/shared-components';
-import AvatarPic from '../images/profile.jpeg';
 import AboutHero from '../components/about-hero/about-hero';
 import Resume from '../components/resume/resume';
+import styled from 'styled-components';
+
+const HeroContainer = styled.div`
+  padding-top: 71px;
+
+  @media screen and (max-width: 440px) {
+    padding-top: 22px;
+  }
+`;
 
 const AboutPage = () => {
   return (
@@ -12,9 +19,9 @@ const AboutPage = () => {
       <SEO title='About' />
       <div className='columns is-centered'>
         <div className='column content-center' style={{paddingBottom: '0px'}}>
-          <div style={{paddingTop: '71px'}}>
+          <HeroContainer>
             <AboutHero />
-          </div>
+          </HeroContainer>
           {/* <div>
             <p>Stephen here. I'm originally from Ireland - the middle bit. 
               I studied at Trinity College Dublin where I got my BA in Computer Science, Linguistics, 
