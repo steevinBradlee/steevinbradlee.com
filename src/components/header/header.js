@@ -38,6 +38,7 @@ const Header = ({ siteTitle }) => {
     header.classList.remove('sticky');
     body.style.position = 'initial';
     body.style.top = '';
+    document.documentElement.style.setProperty('--scroll-y', 0);
   };
 
   if (hasMounted) {
