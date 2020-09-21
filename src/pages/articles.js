@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout';
-import { graphql, Link } from 'gatsby';
-import ArticleTile from '../components/article-tile/article-tile';
-import ArticleTileContainer from '../components/article-tile-container/article-tile-container';
+import { graphql } from 'gatsby';
 import SEO from '../components/seo';
-import TagsList from '../components/tags-list';
-import { MobileHide } from '../components/shared-components';
 import ArticlePreview from '../components/article-preview/article-preview';
 import Pagination from '../components/pagination/pagination';
+import styled from 'styled-components';
+
+const ArticlesContainer = styled.div`
+  .article-preview {
+    padding-bottom: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 29px;
+    row-gap: 23px;
+
+    .article-preview {
+      padding-bottom: 0px;
+    }
+  }
+`;
 
 export default ({ data }) => {
   const [page, setPage] = useState(0);
@@ -26,7 +40,7 @@ export default ({ data }) => {
       <div className=''>
         <div className='content-center main'>
           <h2 className='area-title' style={{paddingTop: '47px', paddingBottom: '23px'}}>Articles</h2>
-          <div>
+          <ArticlesContainer>
             {data.allMdx.nodes.slice(startIndex, endIndex).map(({ id, excerpt, frontmatter, fields }) => (
               <ArticlePreview
                 key={`article-preview-${id}`}
@@ -37,7 +51,7 @@ export default ({ data }) => {
                 image={frontmatter.featuredImage.childImageSharp.fluid}
               />
             ))}
-          </div>
+          </ArticlesContainer >
           <div style={{paddingTop: '56px'}}>
             <Pagination 
               numItems={data.allMdx.nodes.length} 

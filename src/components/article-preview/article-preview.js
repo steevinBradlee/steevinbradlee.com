@@ -15,7 +15,7 @@ export const FlexContainer = styled.div`
 
 const ArticlePreview = (props) => (
   <div className='article-preview' style={props.style ? props.style : {}}>
-    <div className='left'/* style={{height: '250px', overflow: 'hidden'}} */>
+    <div className='left'>
       <Link to={props.slug}>
         <Img fluid={props.image} />
       </Link>

@@ -2,10 +2,12 @@
 
 .article-preview {
   display: flex;
+
   .left {
     width: 45%;
     height: 250px;
     overflow: hidden;
+    background-color: #d8d8d8;
   }
 
   .right {
@@ -43,6 +45,32 @@
       font-size: 14px;
       font-family: $font-primary;
       font-weight: 500;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article-preview {
+    display: block;
+
+    .left {
+      width: initial;
+    }
+
+    .right {
+      padding-left: 0px;
+
+      .article-title {
+        padding-top: 21px;
+      }
+
+      /* .date {
+        padding-bottom: 14px;
+      } */
+      
+      .preview-text {
+        padding-bottom: 10px;
+      }
     }
   }
 }

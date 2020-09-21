@@ -23,11 +23,11 @@ $hamburger-layer-spacing: 3.8px; */
 
 body {
   font-family: sans-serif;
+  background-color: var(--color-background);
+  transition: background-color 0.5s;
 }
 
 #gatsby-focus-wrapper {
   min-height: 100vh;
   position: relative;
-  background-color: var(--color-background);
-  transition: background-color 0.5s;
 }
