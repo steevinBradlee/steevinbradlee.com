@@ -1,5 +1,4 @@
 #siteHeader {
-  background: var(--color-background);
   transition: box-shadow 0.25s;
   position: fixed;
   top: 0;
@@ -11,9 +10,10 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.4);
   }
 
-  /* &.sticky + main {
-    padding-top: 82px;
-  } */
+  > div {
+    background: var(--color-background);
+    transition: background-color 0.5s;
+  }
 
   .container {
     max-width: 992px;
@@ -79,7 +79,7 @@
 
       .column {
         max-width: 992px;
-        padding: 0.75rem 1.75rem;
+        padding: 0.75rem 0px;
 
         .menu-item {
           color: var(--color-primary);
@@ -104,6 +104,15 @@
   #siteHeader {
     .container {
       padding: 0px 1.5rem;
+    }
+  }
+
+  .menu {
+    .menu-container {
+      .column {
+        padding: 0.75rem 1.75rem;
+  
+      }
     }
   }
 }
