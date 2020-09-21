@@ -23,26 +23,26 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title='Articles' />
-      <div className='columns is-centered'>
-        <div className='column content-center'>
-        <h2 className='area-title' style={{paddingTop: '47px', paddingBottom: '23px'}}>Articles</h2>
-        <div>
-          {data.allMdx.nodes.slice(startIndex, endIndex).map(({ id, excerpt, frontmatter, fields }) => (
-            <ArticlePreview
-              key={`article-preview-${id}`}
-              title={frontmatter.title}
-              slug={fields.slug}
-              tags={frontmatter.tags}
-              previewText={frontmatter.teaser ? frontmatter.teaser : excerpt}
-              image={frontmatter.featuredImage.childImageSharp.fluid}
-            />
-          ))}
-        </div>
-        <Pagination 
-          numItems={data.allMdx.nodes.length} 
-          numItemsPerPage={numItemsPerPage} 
-          onPageChange={changePage}
-        />
+      <div className=''>
+        <div className='content-center main'>
+          <h2 className='area-title' style={{paddingTop: '47px', paddingBottom: '23px'}}>Articles</h2>
+          <div>
+            {data.allMdx.nodes.slice(startIndex, endIndex).map(({ id, excerpt, frontmatter, fields }) => (
+              <ArticlePreview
+                key={`article-preview-${id}`}
+                title={frontmatter.title}
+                slug={fields.slug}
+                tags={frontmatter.tags}
+                previewText={frontmatter.teaser ? frontmatter.teaser : excerpt}
+                image={frontmatter.featuredImage.childImageSharp.fluid}
+              />
+            ))}
+          </div>
+          <Pagination 
+            numItems={data.allMdx.nodes.length} 
+            numItemsPerPage={numItemsPerPage} 
+            onPageChange={changePage}
+          />
         </div>
       </div>
     </Layout>

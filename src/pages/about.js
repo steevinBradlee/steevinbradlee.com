@@ -17,8 +17,8 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO title='About' />
-      <div className='columns is-centered'>
-        <div className='column content-center' style={{paddingBottom: '0px'}}>
+      <div className=''>
+        <div className='content-center main' style={{paddingBottom: '0px'}}>
           <HeroContainer>
             <AboutHero />
           </HeroContainer>
