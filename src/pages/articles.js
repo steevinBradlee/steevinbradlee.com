@@ -38,11 +38,13 @@ export default ({ data }) => {
               />
             ))}
           </div>
-          <Pagination 
-            numItems={data.allMdx.nodes.length} 
-            numItemsPerPage={numItemsPerPage} 
-            onPageChange={changePage}
-          />
+          <div style={{paddingTop: '56px'}}>
+            <Pagination 
+              numItems={data.allMdx.nodes.length} 
+              numItemsPerPage={numItemsPerPage} 
+              onPageChange={changePage}
+            />
+          </div>
         </div>
       </div>
     </Layout>

@@ -13,6 +13,15 @@ const HeroContainer = styled.div`
   }
 `;
 
+const ResumeContainer = styled.div`
+  @media screen and (max-width: 768px) {
+    .resume {
+      margin: 0px -1.75rem;
+      padding: 0px 1.75rem;
+    }
+  }
+`;
+
 const AboutPage = () => {
   return (
     <Layout>
@@ -50,7 +59,9 @@ const AboutPage = () => {
           </div> */}
         </div>
       </div>
-      <Resume />
+      <ResumeContainer>
+        <Resume />
+      </ResumeContainer>
     </Layout>
   )
 }

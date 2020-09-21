@@ -80,6 +80,17 @@
 
 @media screen and (max-width: 768px) {
   .about-hero {
+    .small {
+      max-width: 470px;
+    }
+
+    .steve-box {
+      height: 264px;
+  
+      img {
+        max-height: 100%;
+      }
+    }
   }
 }
 
@@ -115,10 +126,6 @@
 
     .steve-box {
       height: 200px;
-  
-      img {
-        max-height: 100%;
-      }
     }
   }
 }
