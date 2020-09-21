@@ -17,7 +17,6 @@
 
   .container {
     max-width: 992px;
-    padding: 0px 1.5rem;
 
     > div {
       display: flex;
@@ -80,6 +79,7 @@
 
       .column {
         max-width: 992px;
+        padding: 0.75rem 1.75rem;
 
         .menu-item {
           color: var(--color-primary);
@@ -102,8 +102,8 @@
 
 @media screen and (max-width: 768px) {
   #siteHeader {
-    .level {
-      display: flex;
+    .container {
+      padding: 0px 1.5rem;
     }
   }
 }

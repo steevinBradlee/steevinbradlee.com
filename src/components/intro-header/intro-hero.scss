@@ -65,8 +65,13 @@
 @media screen and (max-width: 768px) {
   .intro-hero {
     .big {
+      line-height: 132px;
       > div {
         display: inline;
+      }
+
+      .dots {
+        top: -20px;
       }
     }
   }
@@ -77,6 +82,7 @@
     height: initial;
     .big {
       font-size: 64px;
+      line-height: normal;
 
       .line {
         border: solid thin var(--color-primary);

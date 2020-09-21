@@ -25,8 +25,8 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title='Home' />
-      <div className='columns is-centered'>
-        <div className='column content-center'>
+      <div>
+        <div className='content-center main'>
           <HeroContainer>
             <IntroHero />
           </HeroContainer>

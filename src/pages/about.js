@@ -13,12 +13,21 @@ const HeroContainer = styled.div`
   }
 `;
 
+const ResumeContainer = styled.div`
+  @media screen and (max-width: 768px) {
+    .resume {
+      margin: 0px -1.75rem;
+      padding: 0px 1.75rem;
+    }
+  }
+`;
+
 const AboutPage = () => {
   return (
     <Layout>
       <SEO title='About' />
-      <div className='columns is-centered'>
-        <div className='column content-center' style={{paddingBottom: '0px'}}>
+      <div className=''>
+        <div className='content-center main' style={{paddingBottom: '0px'}}>
           <HeroContainer>
             <AboutHero />
           </HeroContainer>
@@ -50,7 +59,9 @@ const AboutPage = () => {
           </div> */}
         </div>
       </div>
-      <Resume />
+      <ResumeContainer>
+        <Resume />
+      </ResumeContainer>
     </Layout>
   )
 }

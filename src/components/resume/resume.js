@@ -23,8 +23,8 @@ const Resume = () => {
   
   return (
     <div className='resume'>
-      <div className='columns is-centered'>
-        <div className='column content-center'>
+      <div className=''>
+        <div className='content-center'>
           <h2 className='area-title' style={{paddingTop: '47px'}}>Experience</h2>
           <div className='experience-rows'>
             <div className='experience'>
