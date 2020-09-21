@@ -28,5 +28,6 @@ body {
 #gatsby-focus-wrapper {
   min-height: 100vh;
   position: relative;
-  background-color: var(--color-background);//$stephen-dark-primary;
+  background-color: var(--color-background);
+  transition: background-color 0.5s;
 }

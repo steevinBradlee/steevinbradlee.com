@@ -1,5 +1,4 @@
 #siteHeader {
-  background: var(--color-background);
   transition: box-shadow 0.25s;
   position: fixed;
   top: 0;
@@ -17,6 +16,8 @@
 
   .container {
     max-width: 992px;
+    background: var(--color-background);
+    transition: background-color 0.5s;
 
     > div {
       display: flex;
