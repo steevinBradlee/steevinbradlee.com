@@ -21,6 +21,14 @@ const ArticlesContainer = styled.div`
       padding-bottom: 0px;
     }
   }
+
+  @media screen and (max-width: 440px) {
+    display: block;
+
+    .article-preview {
+      padding-bottom: 23px;
+    }
+  }
 `;
 
 export default ({ data }) => {

@@ -10,4 +10,8 @@
   padding: 0px 11.5px;
   height: 26px;
   font-family: $font-primary;
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
 }
