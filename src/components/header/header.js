@@ -42,12 +42,6 @@ const Header = ({ siteTitle }) => {
   };
 
   if (hasMounted) {
-    /* window.addEventListener('resize', debounce(() => {
-      if (menuOpen) {
-        toggleMenu();
-      }
-    }), 1000); */
-
     window.addEventListener('scroll', debounce(() => {
       document.documentElement.style.setProperty('--scroll-y', window.scrollY);
       let body = document.body;

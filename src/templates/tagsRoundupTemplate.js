@@ -12,7 +12,7 @@ const tagsRoundupTemplate = ({ data, pageContext }) => {
   const { tag } = pageContext;
   const taggedArticles = data.allMdx.nodes.filter(node => {
     return node.frontmatter.tags.indexOf(tag) > -1;
-  })
+  });
   return (
     <Layout>
       <SEO title='Tags' />

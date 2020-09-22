@@ -16,6 +16,9 @@ exports.createPages = async ({ actions, graphql }) => {
   const tagsRoundupTemplate = path.resolve(
     'src/templates/tagsRoundupTemplate.js'
   );
+  const articles = path.resolve(
+    'src/pages/articles.js'
+  );
 
   const result = await graphql(`
     {
@@ -64,7 +67,7 @@ exports.createPages = async ({ actions, graphql }) => {
   tags.forEach(tag => {
     createPage({
       path: `/articles/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: tagsRoundupTemplate,
+      component: articles,
       context: {
         tag: tag.fieldValue,
       },

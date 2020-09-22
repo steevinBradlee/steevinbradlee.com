@@ -23,27 +23,6 @@ const Layout = ({ children }) => {
       <div className='content-wrap'>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main className='site-main-content'>{children}</main>
-        {/* <div className='columns is-centered'>
-          <div className='column content-center'>
-            <main className='site-main-content'>{children}</main>
-          </div>
-        </div> */}
-        {/* <div
-          style={{
-            flex: 1,
-            height: '100%'
-          }}
-        >
-          <div style={{
-            maxWidth: '768px',
-            margin: '1.45rem auto 0px',
-            display: 'flex',
-            flexDirection: 'column', 
-            justifyContent: 'space-between'
-          }}>
-            <main className='site-main-content'>{children}</main>
-          </div>
-        </div> */}
       </div>
       <Footer />
       <div id='menuOverlay'></div>
