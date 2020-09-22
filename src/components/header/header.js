@@ -48,7 +48,7 @@ const Header = ({ siteTitle }) => {
       }
     }), 1000);
 
-    window.onscroll = () => {
+    window.addEventListener('scroll', debounce(() => {
       document.documentElement.style.setProperty('--scroll-y', window.scrollY);
       let body = document.body;
       if (headerRef.current) {
@@ -62,7 +62,7 @@ const Header = ({ siteTitle }) => {
           header.classList.remove('sticky');
         }
       }
-    };
+    }), 250);
   }
 
   return (
