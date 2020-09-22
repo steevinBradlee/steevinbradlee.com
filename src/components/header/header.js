@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => {
     let header = document.getElementById('siteHeader');
     let body = document.body;
     header.classList.remove('sticky');
-    body.style.position = 'initial';
+    body.style.position = '';
     body.style.top = '';
     document.documentElement.style.setProperty('--scroll-y', 0);
   };

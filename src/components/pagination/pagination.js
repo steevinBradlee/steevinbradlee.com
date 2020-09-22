@@ -16,7 +16,7 @@ const Pagination = (props) => {
   return (
     <div className='pagination'>
       {[...Array(numPages).keys()].map(pageIndex => (
-        <button onClick={() => pageChanged(pageIndex)} className={`number-button ${(pageIndex === page) ? 'current' : ''}`}>{ pageIndex + 1 }</button>
+        <button key={`pagination-${pageIndex}`} onClick={() => pageChanged(pageIndex)} className={`number-button ${(pageIndex === page) ? 'current' : ''}`}>{ pageIndex + 1 }</button>
       ))}
     </div>
   );
