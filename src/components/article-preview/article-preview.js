@@ -43,7 +43,7 @@ ArticlePreview.propTypes = {
   image: PropTypes.object,
   tags: PropTypes.array,
   previewText: PropTypes.string,
-  style: PropTypes.style
+  style: PropTypes.object
 }
 
 export default ArticlePreview;
