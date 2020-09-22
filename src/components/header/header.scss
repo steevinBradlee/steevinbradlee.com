@@ -109,9 +109,13 @@
 
   .menu {
     .menu-container {
-      .column {
-        padding: 0.75rem 1.75rem;
-  
+      .columns {
+        .column {
+          padding: 0.75rem 1.75rem;
+          .menu-item {
+            font-size: 100px;
+          }
+        }
       }
     }
   }
