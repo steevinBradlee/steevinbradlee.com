@@ -78,18 +78,30 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .about-hero {
+    .small {
+      max-width: 463px;
+    }
+
+    .steve-box {
+      height: 271px;
+      bottom: -2px;
+      img {
+        max-height: 100%;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .about-hero {
     .small {
-      max-width: 470px;
+      max-width: 50%;
     }
 
     .steve-box {
       height: 264px;
-  
-      img {
-        max-height: 100%;
-      }
     }
   }
 }
@@ -104,6 +116,7 @@
 
     .small {
       padding-bottom: 22px;
+      max-width: initial;
     }
 
     .links {

@@ -6,6 +6,8 @@ import ArticlePreview from '../components/article-preview/article-preview';
 import Pagination from '../components/pagination/pagination';
 import styled from 'styled-components';
 
+import CLOSE_ICON from '../images/close.png';
+
 const ArticlesContainer = styled.div`
   .article-preview {
     padding-bottom: 40px;
@@ -33,7 +35,7 @@ const ArticlesContainer = styled.div`
 
 const BigTag = styled.span`
   > a {
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     color: white;
     margin-right: 10px;
     text-decoration: none;
@@ -42,7 +44,33 @@ const BigTag = styled.span`
     padding: 0px 11.5px;
     height: 26px;
     font-family: Sofia-Pro, sans-serif;
-    display: block;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+
+    > span {
+      &:first-child {
+        padding-right: 7px;
+      }
+
+      &:last-child {
+        border-radius: 50%;
+        background: white;
+        padding: 5px;
+        box-sizing: border-box;
+        height: 16px;
+        width: 16px;
+
+        img {
+          height: 100%;
+          display: block;
+        }
+      }
+    }
   }
 `;
 
@@ -77,9 +105,16 @@ export default ({ data, pageContext }) => {
             <div style={{display: 'flex', alignItems: 'center', paddingTop: '10px'}}>
               {tag &&
                 <>
-                  <BigTag><Link to={'/articles'}>{ tag }</Link></BigTag>
-                  <span style={{padding: '0px 10px 0px 3px'}}>|</span>
-                  <span>{`${articles.length} ${articles.length === 1 ? 'article' : 'articles'}`}</span>
+                  <BigTag>
+                    <Link to={'/articles'}>
+                      <span>{ tag }</span>
+                      <span><img src={CLOSE_ICON} /></span>
+                    </Link>
+                  </BigTag>
+                  <span style={{color: 'var(--color-text)'}}>
+                    <span style={{padding: '0px 10px 0px 3px'}}>|</span>
+                    <span>{`${articles.length} ${articles.length === 1 ? 'article' : 'articles'}`}</span>
+                  </span>
                 </>
               }
             </div>

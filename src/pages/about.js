@@ -14,7 +14,7 @@ const HeroContainer = styled.div`
 `;
 
 const ResumeContainer = styled.div`
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .resume {
       margin: 0px -1.75rem;
       padding: 0px 1.75rem;
