@@ -72,8 +72,8 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             </div>
           </div>
         </article>
-        <aside className={`article-side ${screenWidth <= 768 ? 'hidden' : ''}`}>
-          <div className='side-fixed'>
+        <aside className={`article-side`}>
+          <div className='side-sticky'>
             {(headerElements && headerElements.length > 0) &&
               <TableOfContents headerElements={headerElements} />
             }

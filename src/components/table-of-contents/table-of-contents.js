@@ -18,10 +18,10 @@ const TableOfContents = (props) => {
   });
 
   return (
-    <div className='table-of-contents'>
+    <nav className='table-of-contents'>
       <div className='heading'>CONTENTS</div>
       { headers }
-    </div>
+    </nav>
   );
 };
 
