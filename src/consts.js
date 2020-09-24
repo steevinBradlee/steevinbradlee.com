@@ -18,6 +18,10 @@ export const COLORS = {
     light: '#dbdfe3',
     dark: '#000A19'
   },
+  articleBackground: {
+    light: 'white',
+    dark: '#0E141B'
+  },
   primary: {
     light: '#021D44',
     dark: 'white'

@@ -21,6 +21,12 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `article-header`
+            }
+          },
         ],
         plugins: [
           {
@@ -28,6 +34,19 @@ module.exports = {
             options: {
               maxWidth: 590,
             },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `article-header`
+            }
           },
         ],
       },

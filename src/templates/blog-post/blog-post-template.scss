@@ -1,0 +1,32 @@
+@import '../../styles/_variables';
+
+.blog-post {
+  display: flex;
+  font-family: $font-primary;
+
+  .article-lead {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: -3rem;
+    padding: 3rem;
+  }
+
+  .article-side {
+    padding: 3rem 0 3rem 1.5rem;
+    flex: 0 0 calc(10.5rem + 1.5rem);
+
+    .side-fixed {
+      position: fixed;
+    }
+  }
+
+  &.mobile {
+    .article-lead {
+      margin-left: 0;
+      padding: 3rem 0 0 0;
+    }
+    .article-side {
+      display: none;
+    }
+  }
+}

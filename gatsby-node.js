@@ -11,7 +11,7 @@ const _ = require("lodash")
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
-    'src/templates/blogPostTemplate.js'
+    'src/templates/blog-post/blogPostTemplate.js'
   );
   const tagsRoundupTemplate = path.resolve(
     'src/templates/tagsRoundupTemplate.js'
