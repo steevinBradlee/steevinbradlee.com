@@ -43,9 +43,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           <div>
             <h1 className='blog-title'>{frontmatter.title}</h1>
             {frontmatter.teaser &&
-              <div style={{marginBottom: '10px'}}>{frontmatter.teaser}</div>
+              <div className='blog-teaser'>{frontmatter.teaser}</div>
             }
-            <div>{frontmatter.date}</div>
+            <div className='blog-date'>{frontmatter.date}</div>
             {/* <div className='article-image-container'>
               <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
             </div> */}
