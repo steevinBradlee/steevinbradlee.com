@@ -65,5 +65,9 @@ export const COLORS = {
   paginationBtn: {
     light: '#dbdfe3',
     dark: '#4e617c'
+  },
+  articleBg: {
+    light: 'white',
+    dark: '#0f141a'
   }
 };

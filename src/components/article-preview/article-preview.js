@@ -30,7 +30,6 @@ const ArticlePreview = (props) => (
       <FlexContainer>
         {props.tags.map((tag, key) => (
           <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${tag}`}/>
-          //<a className='tag' key={`tag-${tag}-key`} href={`/articles/tags/${tag}`}>{tag}</a>
         ))}
       </FlexContainer>
     </div>
