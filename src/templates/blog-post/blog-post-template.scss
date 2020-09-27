@@ -2,6 +2,7 @@
 
 .blog-post {
   font-family: $font-primary;
+  background-color: var(--color-blogHeadBg);
 
   .header {
     padding-top: 180px;
@@ -32,16 +33,27 @@
       margin: 0 auto;
 
       .article-lead {
-        flex-grow: 1;
+        /* flex-grow: 1;
         flex-shrink: 1;
         margin-left: -3rem;
         padding: 3rem;
+        padding-top: 0; */
+        flex-basis: 85%;
+        margin-left: -3rem;
+        padding: 3rem;
         padding-top: 0;
+        min-width: 0;
+        padding-right: 0;
+
+        a {
+          color: var(--color-secondary);
+        }
       }
     
       .article-side {
-        padding: 3rem 0 3rem 1.5rem;
-        flex: 0 0 calc(10.5rem + 1.5rem);
+        padding: 3rem 0 3rem 2.5rem;
+        /* padding: 3rem 0 3rem 1.5rem;
+        flex: 0 0 calc(10.5rem + 1.5rem); */
         padding-top: 0;
     
         .side-sticky {

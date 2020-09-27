@@ -9,9 +9,9 @@ const Tag = (props) => {
   return (
     <>
       {link ?
-        <Link className='tag' to={link}>{ title }</Link>
+        <Link className='article-tag' to={link}>{ title }</Link>
         :
-        <span className='tag'>{ title }</span>
+        <span className='article-tag'>{ title }</span>
       }
     </>
   )

@@ -38,7 +38,7 @@ export default ({ data }) => {
                 slug={fields.slug}
                 tags={frontmatter.tags}
                 previewText={frontmatter.teaser}
-                image={frontmatter.featuredImage.childImageSharp.fluid}
+                image={frontmatter.featuredImage ? frontmatter.featuredImage.childImageSharp.fluid : ''}
                 key={`article-tile-${index}`}
               />
             ))}

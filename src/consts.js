@@ -69,5 +69,9 @@ export const COLORS = {
   articleBg: {
     light: 'white',
     dark: '#0f141a'
+  },
+  blogHeadBg: {
+    light: '#d8d8d8',
+    dark: '#001d4a'
   }
 };
