@@ -4,12 +4,10 @@ date: 2020-09-25
 published: true
 tags: [SharePoint, SharePoint Online, PowerShell]
 teaser: Use PowerShell to convert a promoted links list to a modern quick links web part
-featuredImage: ./powershell-logo.png
+featuredImage: ./code-blurred.png
 ---
 
-"We love promoted links web parts so we want to keep ALL OF THEM" - A Client
-
-The moodern Quick Links web part is slick, user-friendly, and (IMO) vastly superior to the classic Promoted Links web part. When migrating from classic SharePoint to modern, you may encounter scenarios where it's necessary to convert a number of promoted links web parts to their modern counterparts. Migrations aside, knowing how to programmatically populate these modern web parts is incredibly useful. Modern Quick Link web parts do not use a SharePoint list, or any storage mechanism visible to the user for storing their links, other than through the web part itself. So how do we populate the web part programmatically? PowerShell (and some JSON manipulation) to the rescue.
+The modern Quick Links web part is slick, user-friendly, and (IMO) vastly superior to the classic Promoted Links web part. When migrating from classic SharePoint to modern, you may encounter scenarios where it's necessary to convert a number of promoted links web parts to their modern counterparts. Migrations aside, knowing how to programmatically populate these modern web parts is incredibly useful. Modern Quick Link web parts do not use a SharePoint list, or any storage mechanism visible to the user for storing their links, other than through the web part itself. So how do we populate the web part programmatically? PowerShell (and some JSON manipulation) to the rescue.
 
 For demonstration purposes I'll be showing you how to fetch the links from a Promoted Links list and copy them into a new Modern Quick Links web part. If you already have such a list ready to go, you can skip to the [next section](#quick-links-web-part-json-properties). Otherwise, let's first create a promoted links list in our test site.
 

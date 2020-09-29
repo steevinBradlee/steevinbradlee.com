@@ -5,9 +5,17 @@
 
   .left {
     width: 45%;
-    height: 250px;
     overflow: hidden;
     background-color: #d8d8d8;
+
+    > a {
+      height: 250px;
+      display: block;
+
+      > .gatsby-image-wrapper {
+        height: 100%;
+      }
+    }
   }
 
   .right {

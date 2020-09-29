@@ -61,7 +61,10 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             <aside className={`article-side`}>
               <div className='side-sticky'>
                 {(headerElements && headerElements.length > 0) &&
-                  <TableOfContents headerElements={headerElements} />
+                  <TableOfContents 
+                    headerElements={headerElements} 
+                    slug={pageContext.slug ? pageContext.slug.slice(0, -1) : ''}
+                  />
                 }
               </div>
             </aside>

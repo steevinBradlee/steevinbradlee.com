@@ -11,6 +11,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     'gatsby-plugin-styled-components',
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -102
+      }
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
