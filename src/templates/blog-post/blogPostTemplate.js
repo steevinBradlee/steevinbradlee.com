@@ -1,8 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 import SEO from '../../components/seo';
 import useHasMounted from '../../hooks/useHasMounted';
 import './blog-post-template.scss';
@@ -39,16 +38,13 @@ const BlogPostTemplate = ({ data, pageContext }) => {
     <Layout>
       <SEO title={frontmatter.title} />
       <div className={`blog-post ${screenWidth <= 768 ? 'mobile' : ''}`}>
-        <div className={`header content-center main`}>
-          <div>
+        <div className={`header`}>
+          <div className='content-center'>
             <h1 className='blog-title'>{frontmatter.title}</h1>
             {frontmatter.teaser &&
               <div className='blog-teaser'>{frontmatter.teaser}</div>
             }
             <div className='blog-date'>{frontmatter.date}</div>
-            {/* <div className='article-image-container'>
-              <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
-            </div> */}
           </div>
         </div>
         <div className='article-container'>

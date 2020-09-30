@@ -33,11 +33,6 @@
       margin: 0 auto;
 
       .article-lead {
-        /* flex-grow: 1;
-        flex-shrink: 1;
-        margin-left: -3rem;
-        padding: 3rem;
-        padding-top: 0; */
         flex-basis: 85%;
         margin-left: -3rem;
         padding: 3rem;
@@ -48,17 +43,10 @@
         a {
           color: var(--color-secondary);
         }
-
-        /* h2 {
-          padding-top: 82px;
-          margin-top: -82px;
-        } */
       }
     
       .article-side {
         padding: 3rem 0 3rem 2.5rem;
-        /* padding: 3rem 0 3rem 1.5rem;
-        flex: 0 0 calc(10.5rem + 1.5rem); */
         padding-top: 0;
     
         .side-sticky {
