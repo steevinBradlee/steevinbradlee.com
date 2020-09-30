@@ -38,8 +38,8 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div className='blog-post'>
-        <div className={`header content-center main ${screenWidth <= 768 ? 'mobile' : ''}`}>
+      <div className={`blog-post ${screenWidth <= 768 ? 'mobile' : ''}`}>
+        <div className={`header content-center main`}>
           <div>
             <h1 className='blog-title'>{frontmatter.title}</h1>
             {frontmatter.teaser &&

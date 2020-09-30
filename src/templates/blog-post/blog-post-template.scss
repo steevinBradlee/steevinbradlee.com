@@ -2,11 +2,11 @@
 
 .blog-post {
   font-family: $font-primary;
-  background-color: var(--color-blogHeadBg);
 
   .header {
     padding-top: 180px;
     padding-bottom: 2rem;
+    background-color: var(--color-blogHeadBg);
 
     .blog-title {
       margin-bottom: 10px;
@@ -70,12 +70,33 @@
   }
 
   &.mobile {
-    .article-lead {
+    .article-container > div .article-lead {
       margin-left: 0;
       padding: 3rem 0 0 0;
+      flex-basis: initial;
     }
     .article-side {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .blog-post {
+    /* margin: 0px -1.75rem;
+    padding: 0px 1.75rem; */
+    .header {
+      margin-left: -1.75rem;
+      margin-right: -1.75rem;
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+
+    .article-container {
+      margin-left: -1.75rem;
+      margin-right: -1.75rem;
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
     }
   }
 }
