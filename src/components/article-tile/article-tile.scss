@@ -5,6 +5,15 @@
   .article-image-container {
     background-color: #777777;
     padding: 0px;
+
+    > a {
+      height: 250px;
+      display: block;
+
+      .gatsby-image-wrapper {
+        height: 100%;
+      }
+    }
   }
 
   .article-title {

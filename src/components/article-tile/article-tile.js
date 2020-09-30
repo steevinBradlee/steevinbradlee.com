@@ -14,7 +14,7 @@ export const FlexContainer = styled.div`
 
 const ArticleTile = (props) => (
   <div className='article-tile'>
-    <div className='article-image-container' style={{height: '250px', overflow: 'hidden'}}>
+    <div className='article-image-container' style={{overflow: 'hidden'}}>
       <Link to={props.slug}>
         {props.image &&
           <Img fluid={props.image} />

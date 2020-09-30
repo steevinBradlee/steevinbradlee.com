@@ -89,10 +89,18 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .blog-post  {
-    .article-side {
-      display: none;
+    .article-container > div {
+      .article-lead {
+        margin-left: 0;
+        padding: 0;
+        padding-bottom: 3rem;
+        flex-basis: initial;
+      }
+      .article-side {
+        display: none;
+      }
     }
   }
 }
