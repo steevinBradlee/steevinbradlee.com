@@ -35,28 +35,29 @@ const Resume = () => {
               </div>
               <div className='right'>
                 <div className='title'>Software Engineer</div>
-                <div className='sub-sub-title'>Insight</div>
+                <div className='sub-sub-title'>Insight Enterprises, Productivity Application Services</div>
                 <div className='time-span'>
                   <div className='time-point'>
                     <div>
                       <div className='sub-title'>Software Engineer</div>
                       <div className='detail'>Nov 2016 - Oct 2017  | 1 yr</div>
                       <div className='detail'>Watertown, Massachusetts</div>
-                      <div className='body'>Office 365 Sharepoint, Sharepoint 2016, React, SPFX</div>
+                      <div className='body'>Creating elegant UI features for SharePoint Online using React and SPFx. Creating automation solutions using Azure and PowerShell.</div>
+                      <div className='body'>React, AngularJS, Angular 2+, PowerShell, Azure Sharepoint Online, SPFx</div>
                     </div>
                   </div>
                   <div className='time-point'>
                     <div>
                       <div className='sub-title'>Associate Software Engineer</div>
                       <div className='detail'>Nov 2016 - Oct 2017  | 1 yr</div>
-                      <div className='detail'>Watertown, Massachusetts</div>
+                      <div className='body'></div>
                     </div>
                   </div>
                   <div className='time-point'>
                     <div>
                       <div className='sub-title'>Software Engineer Intern</div>
                       <div className='detail'>Nov 2016 - Oct 2017  | 1 yr</div>
-                      <div className='detail'>Watertown, Massachusetts</div>
+                      <div className='body'>Creating web components for SharePoint Classic sites with React, AngularJS, and CSS.</div>
                     </div>
                   </div>
                 </div>
@@ -73,7 +74,8 @@ const Resume = () => {
                 <div className='sub-sub-title'>Microsoft, Natural Language Experiences Team</div>
                 <div className='detail'>July 2015 - July 2016 | 1 yr</div>
                 <div className='detail'>Microsoft European Development Center, Dublin, Ireland</div>
-                <div className='body'></div>
+                <div className='body'>Aided in research and feasibility studies, language data processing, product testing, bug fixing, and software test design.</div>
+                <div className='body'>C#, Python</div>
               </div>
             </div>
             <div className='experience'>
@@ -101,7 +103,7 @@ const Resume = () => {
                 <div className='sub-sub-title'>Bachelor of Arts</div>
                 <div className='detail'>Sep 2011 - May 2015  | 4 yrs</div>
                 <div className='detail'>Trinity College Dublin, Ireland</div>
-                <div className='body'>Collaborated with a team of researchers at the ADAPT Centre on a project submitted as part of the Blizzard TTS Challenge 2016. My work involved extending the novel-parsing system I created for my final year project in University.</div>
+                <div className='body'>Graduated with a First Class Honours (4.0 GPA). Completed a study abroad year at the University of Saarland in Germany.</div>
               </div>
             </div>
           </div>
