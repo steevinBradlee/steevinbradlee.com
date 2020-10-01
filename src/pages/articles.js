@@ -13,7 +13,7 @@ const ArticlesContainer = styled.div`
     padding-bottom: 40px;
   }
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 29px;
@@ -22,7 +22,7 @@ const ArticlesContainer = styled.div`
     .article-preview {
       padding-bottom: 0px;
     }
-  }
+  } */
 
   @media screen and (max-width: 440px) {
     display: block;
