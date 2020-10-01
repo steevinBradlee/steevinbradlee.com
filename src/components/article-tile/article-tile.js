@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Tag from '../tag/tag';
 
+const _ = require("lodash");
+
 import './article-tile.scss';
 
 export const FlexContainer = styled.div`
@@ -27,7 +29,7 @@ const ArticleTile = (props) => (
     <div className='date'>03/07/20</div>
     <FlexContainer>
       {props.tags.map((tag, key) => (
-        <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${tag}`}/>
+        <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${_.kebabCase(tag)}`}/>
       ))}
     </FlexContainer>
   </div>

@@ -14,7 +14,7 @@ const IntroHero = () => (
         <div className='line line4'></div></span>.</span>
       </div>
     </div>
-    <div className='small'>I also enjoy running, being a cute bitch, going shopping,  blah blah blah blah blah.</div>
+    <div className='small'>I like front-end development and other nerdish nonsense.</div>
   </div>
 );
 

@@ -16,5 +16,9 @@
     text-align: center;
     color: white;
     color: var(--color-primary);
+
+    &:last-child() {
+      font-size: 11px;
+    }
   }
 }

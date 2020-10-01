@@ -7,6 +7,8 @@ import Tag from '../tag/tag';
 import Dotdotdot from 'react-dotdotdot';
 import useCurrentWitdh from '../../hooks/useCurrentWidth';
 
+const _ = require('lodash');
+
 import './article-preview.scss';
 
 export const FlexContainer = styled.div`
@@ -32,7 +34,7 @@ const ArticlePreview = (props) => {
           <Dotdotdot clamp={screenWidth > 768 ? 5 : 3}>{props.previewText}</Dotdotdot></div>
         <FlexContainer>
           {props.tags.map((tag, key) => (
-            <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${tag}`}/>
+            <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${_.kebabCase(tag)}`}/>
           ))}
         </FlexContainer>
       </div>
