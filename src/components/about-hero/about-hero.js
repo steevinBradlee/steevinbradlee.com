@@ -3,6 +3,8 @@ import React from 'react';
 import './about-hero.scss'; 
 import LilSteve from '../../images/lil-deebz.svg';
 
+const RESUME_PATH = '/Stephen Bradley-Resume 10-03-2020.pdf';
+
 const AboutHero = () => (
   <div className='about-hero'>
     <div className='big'>Hi, I’m Stephen Bradley.
@@ -15,7 +17,7 @@ const AboutHero = () => (
       <span className='spacer'>|</span>
       <a href='https://www.linkedin.com/in/stephenbradley93/'>LinkedIn</a>
       <span className='spacer'>|</span>
-      <a>CV</a>
+      <a href={RESUME_PATH}>CV</a>
     </div>
     <div className='steve-box'>
       <img src={LilSteve} />
@@ -31,7 +33,7 @@ const AboutHero = () => (
         <span className='spacer'>|</span>
         <a href='https://www.linkedin.com/in/stephenbradley93/'>LinkedIn</a>
         <span className='spacer'>|</span>
-        <a>CV</a>
+        <a href={RESUME_PATH}>CV</a>
       </div>
       <div className='steve-box'>
         <img src={LilSteve} />

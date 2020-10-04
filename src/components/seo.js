@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, image: metaImage, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,13 +19,19 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            keywords
+            siteUrl
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
+  const image = metaImage && metaImage.src
+    ? `${metaImage.src}`
+    //? `${site.siteMetadata.siteUrl}${metaImage.src}`
+    : null;
 
   return (
     <Helmet
@@ -42,6 +48,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:title`,
           content: title,
+        },
+        {
+          name: 'keywords',
+          content: site.siteMetadata.keywords.join(','),
         },
         {
           property: `og:description`,
@@ -67,7 +77,35 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]
+      .concat(metaImage ? 
+        [
+          {
+            property: "og:image",
+            content: image,
+          },
+          {
+            property: "og:image:width",
+            content: metaImage.width,
+          },
+          {
+            property: "og:image:height",
+            content: metaImage.height,
+          },
+          {
+            name: "twitter:card",
+            content: "summary_large_image",
+          },
+        ]
+        : 
+        [
+          {
+            name: "twitter:card",
+            content: "summary",
+          },
+        ]
+      )
+      .concat(meta)}
     >
       <link rel="stylesheet" href="https://use.typekit.net/euj8wqa.css" />
       <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/css/line-awesome.min.css" />
@@ -86,6 +124,11 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  })
 }
 
 export default SEO
