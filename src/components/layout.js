@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header/header';
-//import './layout.css';
-import { Helmet } from 'react-helmet';
 import Footer from './footer/footer';
-import useHasMounted from '../hooks/useHasMounted';
+import SEO from '../components/seo';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

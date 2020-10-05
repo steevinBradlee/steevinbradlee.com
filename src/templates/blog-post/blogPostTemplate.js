@@ -6,7 +6,6 @@ import SEO from '../../components/seo';
 import useHasMounted from '../../hooks/useHasMounted';
 import './blog-post-template.scss';
 import TableOfContents from '../../components/table-of-contents/table-of-contents';
-import useCurrentWitdh from '../../hooks/useCurrentWidth';
 import styled from 'styled-components';
 
 const headerQuery = `
@@ -24,10 +23,9 @@ const ArticleContainer = styled.div`
 `;
 
 const BlogPostTemplate = ({ data, pageContext }) => {
-  const { frontmatter, body, excerpt } = data.mdx;
+  const { frontmatter, body } = data.mdx;
   const { previous, next } = pageContext;
   const hasMounted = useHasMounted();
-  const screenWidth = useCurrentWitdh();
 
   let headerElements;
   if (hasMounted) { 

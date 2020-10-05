@@ -21,6 +21,7 @@ function SEO({ description, lang, image: metaImage, meta, title }) {
             author
             keywords
             siteUrl
+            image
           }
         }
       }
@@ -32,6 +33,7 @@ function SEO({ description, lang, image: metaImage, meta, title }) {
     ? `${metaImage.src}`
     //? `${site.siteMetadata.siteUrl}${metaImage.src}`
     : null;
+  const fallbackImage = site.siteMetadata.image;
 
   return (
     <Helmet
@@ -99,6 +101,10 @@ function SEO({ description, lang, image: metaImage, meta, title }) {
         ]
         : 
         [
+          {
+            property: "og:image",
+            content: fallbackImage,
+          },
           {
             name: "twitter:card",
             content: "summary",

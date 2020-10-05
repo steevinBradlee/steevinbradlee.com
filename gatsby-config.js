@@ -4,7 +4,8 @@ module.exports = {
     description: `Tutorials for developer. Focus on front-end development and process automation.`,
     author: `Stephen Bradley`,
     siteUrl: 'https://www.stephen-bradley.com',
-    keywords: ['React', 'Web', 'Development', 'Angular', 'PowerShell', 'Font-End']
+    keywords: ['React', 'Web', 'Development', 'Angular', 'PowerShell', 'Font-End'],
+    image: '/lil-deebz.png'
   },
   plugins: [
     `gatsby-transformer-sharp`,
