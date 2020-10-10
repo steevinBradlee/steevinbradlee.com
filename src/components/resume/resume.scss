@@ -1,4 +1,4 @@
-@import "../../styles/_variables.scss";
+@import '../../styles/_variables.scss';
 
 .resume {
   font-family: $font-primary;
@@ -37,8 +37,6 @@
         padding-right: 17px;
 
         .image-frame {
-          /* height: 43px;
-          border: solid thin var(--color-primary); */
           margin-top: 6px;
         }
       }

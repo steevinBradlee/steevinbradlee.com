@@ -14,14 +14,6 @@ const headerQuery = `
   .article-mdx-body h3
 `;
 
-const ArticleContainer = styled.div`
-  background-color: #0f141a;
-  @media screen and (max-width: 1024px) {
-    margin: 0px -1.75rem;
-    padding: 0px 1.75rem;
-  }
-`;
-
 const BlogPostTemplate = ({ data, pageContext }) => {
   const { frontmatter, body } = data.mdx;
   const { previous, next } = pageContext;

@@ -29,7 +29,7 @@ const AboutHero = () => (
       </div>
       <div className='small'>Interested in working together? Feel free to contact me for potential projects or collaborations.</div>
       <div className='small links'>
-        <a href='mailto:stephen.jm.bradley93@gmail.com'>Email</a>
+        <a href='mailto:step15hen@gmail.com'>Email</a>
         <span className='spacer'>|</span>
         <a href='https://www.linkedin.com/in/stephenbradley93/'>LinkedIn</a>
         <span className='spacer'>|</span>

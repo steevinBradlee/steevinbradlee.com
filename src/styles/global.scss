@@ -1,15 +1,10 @@
 @charset "utf-8";
 
 // If need, change your variables before importing Bulma
-//$title-color: #ff0000;
 
 // Hamburgers
 $hamburger-layer-color: var(--color-primary);
-/* $hamburger-layer-width: 22px;
-$hamburger-layer-height: 3.8px;
-$hamburger-layer-spacing: 3.8px; */
 
-//@use "./_variables.scss";
 @import "../styles/_variables.scss";
 
 @import "~bulma/sass/utilities/_all.sass";

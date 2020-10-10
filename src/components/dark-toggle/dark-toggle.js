@@ -30,8 +30,6 @@ const DarkToggle = () => {
       />
       <audio id='onSound' src={ON_SOUND} preload='auto'></audio>
       <audio id='offSound' src={OFF_SOUND} preload='auto'></audio>
-        {/* <button onclick='document.getElementById("sound1").play();'>Play
-        it</button> */}
     </label>
   );
 };
