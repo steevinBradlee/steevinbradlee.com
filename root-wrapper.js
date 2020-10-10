@@ -4,6 +4,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import Code from './src/components/code/code';
 import { ThemeProvider } from './src/components/theme-context';
 import { preToCodeBlock } from 'mdx-utils';
+import Emphasis from './src/components/emphasis/emphasis';
 
 const components = {
   'p.inlineCode': props => (
@@ -18,6 +19,7 @@ const components = {
       return <pre {...preProps} />
     }
   },
+  Emphasis
   /* pre: ({ children: { props } }) => {
     if (props.mdxType === 'code') {
       return (

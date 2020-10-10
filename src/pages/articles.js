@@ -102,7 +102,7 @@ export default ({ data, pageContext }) => {
         <div className='content-center main'>
           <div style={{paddingBottom: '23px'}}>
             <h2 className='area-title' style={{paddingTop: '47px', paddingBottom: '0px'}}>Articles</h2>
-            <div style={{display: 'flex', alignItems: 'center', paddingTop: '10px'}}>
+            <div style={{display: 'flex', alignItems: 'center', paddingTop: '15px'}}>
               {tag &&
                 <>
                   <BigTag>

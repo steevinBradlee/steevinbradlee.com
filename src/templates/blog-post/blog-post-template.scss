@@ -39,10 +39,6 @@
         padding-top: 0;
         min-width: 0;
         padding-right: 0;
-
-        a {
-          color: var(--color-secondary);
-        }
       }
     
       .article-side {
@@ -65,6 +61,27 @@
     }
     .article-side {
       display: none;
+    }
+  }
+}
+
+.article-mdx-body {
+  font-size: 19px;
+  line-height: 30px;
+
+  a {
+    color: var(--color-secondary);
+  }
+
+  h2 {
+    padding-top: 15px;
+
+    > a {
+      padding-top: 15px;
+    }
+
+    svg {
+      fill: var(--color-primary);
     }
   }
 }

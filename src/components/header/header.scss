@@ -118,5 +118,29 @@
 }
 
 @media screen and (max-width: 440px) {
+  .menu {
+    .menu-container {
+      .columns {
+        .column {
+          .menu-item {
+            font-size: 82px;
+          }
+        }
+      }
+    }
+  }
+}
 
+@media screen and (max-width: 360px) {
+  .menu {
+    .menu-container {
+      .columns {
+        .column {
+          .menu-item {
+            font-size: 72px;
+          }
+        }
+      }
+    }
+  }
 }

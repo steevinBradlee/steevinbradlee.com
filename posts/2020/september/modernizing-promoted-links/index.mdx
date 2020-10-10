@@ -7,9 +7,17 @@ teaser: Use PowerShell to convert a promoted links list to a modern quick links 
 featuredImage: ./code-blurred.png
 ---
 
-The modern Quick Links web part is slick, user-friendly, and (IMO) vastly superior to the classic Promoted Links web part. When migrating from classic SharePoint to modern, you may encounter scenarios where it's necessary to convert a number of promoted links web parts to their modern counterparts. Migrations aside, knowing how to programmatically populate these modern web parts is incredibly useful. Modern Quick Link web parts do not use a SharePoint list, or any storage mechanism visible to the user for storing their links, other than through the web part itself. So how do we populate the web part programmatically? PowerShell (and some JSON manipulation) to the rescue.
+The modern Quick Links web part is slick, user-friendly, and (IMO) vastly superior to the classic Promoted Links web part.
 
-For demonstration purposes I'll be showing you how to fetch the links from a Promoted Links list and copy them into a new Modern Quick Links web part. If you already have such a list ready to go, you can skip to the [next section](#quick-links-web-part-json-properties). Otherwise, let's first create a promoted links list in our test site.
+When migrating from classic SharePoint to modern, you may have the need to convert a number of promoted links web parts to their modern counterparts. Migrations aside, knowing how to programmatically populate these modern web parts is incredibly useful. 
+
+Modern Quick Link web parts do not use a SharePoint list, or any storage mechanism visible to the user for storing their links, other than through the web part itself. So how can we populate the web part with the links from a promoted links list. The answer is to use PowerShell to programatically add links from the list to the web part.
+
+<Emphasis>
+This tutorial assumes prior knowledge of PowerShell and the <a href="https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps">SharePointPnPPowerShellOnline</a> cmdlets.
+</Emphasis>
+
+If you already have a promoted links list you want to use to populate a modern quick links web part, you can skip to the [next section](#quick-links-web-part-json-properties). Otherwise, let's create a promoted links list in our test site.
 
 ## Creating a Promoted Links List
 
@@ -20,21 +28,25 @@ By default, the ability to create Promoted Links lists, and other Team Collabora
 
 ![Team Colaboration Lists SharePoint site feature](./activate-feature.PNG)
 
-Return to you site contents and click *+New*. Select Promoted Links list. Now populate your list with whatever links you want.
+Return to you site contents and click *+New*. Select Promoted Links list, name your new list, and populate it with whatever links you want.
+
+Next we'll be creating the JSON that we will be manipulating in our script before using it to configure our quick links web part.
 
 ## Quick Links Web Part JSON Properties
 
-When adding a web part programatically to a SharePoint page using PowerShell, we use the **Add-PnPClientSideWebPart** cmdlet from the [SharePointPnPPowerShellOnline](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps) module. This cmdlet allows us to add a web part to a specified page and configure the web part using an optional JSON object parameter. The JSON allows us to configure some of the web part properties normally set using the web part’s property pane. It also allows us to specify links you want to prepopulate in the web part. 
+When programtically adding a web part to a SharePoint page using PowerShell, we use the **Add-PnPClientSideWebPart** cmdlet from the [SharePointPnPPowerShellOnline](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps) module. 
 
-We want to match the look and feel of the promoted links web part. This means we need the ability to show a Title and Description for a link as well as display an image. The *Button* layout style allows us to do both, so that is the layout we will go with.
+This cmdlet adds a web part to a specified page and allows us to configure the web part using an optional JSON object parameter, **-WebPartProperties**. Through the JSON, we can configure some of the web part properties we normally set using the web part’s property pane. More importantly for this tutorial, we can add links to this JSON that we want to add to our links web part. 
+
+In order to match the look and feel of the promoted links web part we want to display a title, description, and image for every link in our modern quick links web part. Modern quick links has a number of different layout styled for displaying its links. The *Button* layout style covers all of our requirements, so this a property that will also be configured in our JSON object.
 
 Depending on the layout you choose for the web part, the JSON schema for setting the properties will differ. To get the correct JSON schema for the Button layout, we can use the **workbench** page, which allows us to inspect a web part's properties.
 
-1. Open up any SharePoint site.
+1. Open up your target SharePoint site.
 2. Change the URL to the following https://TENANT.sharepoint.com/sites/SITE/_layouts/15/workbench.aspx.
 3. Add a quick links web part and change it to the Button layout. Add a test link and select a custom image. Doing so will prepopulate the web part with some of the properties that we will be manipulating when we are adding our actual content.
 4. Click the *Web part data* button in the top left corner of the page and copy the JSON object from the modal that appears.
-5. Paste this JSON into a new file (web-part-properties.json) in your working directory.
+5. Paste this JSON into a new file (web-part-properties.json) in your local working directory.
 
 ![SharePoint workbench page with quick links web part properties](./quick-links-properties.PNG)
 

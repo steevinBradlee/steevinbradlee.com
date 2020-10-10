@@ -1,0 +1,32 @@
+
+.emphasis {
+  padding-top: 15px;
+  padding-bottom: 35px;
+  margin: 0px -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+
+  > .emphasis-body {
+    background: #d8d8d8;
+    padding: 15px 24px;
+    border-radius: 5px;
+    border-left: solid thick white;
+    color: #021D44;
+  }
+
+  > .emphasis-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-articleBackground);
+    padding: 10px;
+    border-radius: 50%;
+    left: -11px;
+    top: -9px;
+
+    svg {
+      fill: var(--color-primary);
+    }
+  }
+}

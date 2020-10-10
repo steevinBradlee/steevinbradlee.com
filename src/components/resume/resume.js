@@ -42,8 +42,8 @@ const Resume = () => {
                       <div className='sub-title'>Software Engineer</div>
                       <div className='detail'>Nov 2016 - Oct 2017  | 1 yr</div>
                       <div className='detail'>Watertown, Massachusetts</div>
-                      <div className='body'>Creating elegant UI features for SharePoint Online using React and SPFx. Creating automation solutions using Azure and PowerShell.</div>
-                      <div className='body'>React, AngularJS, Angular 2+, PowerShell, Azure Sharepoint Online, SPFx</div>
+                      <div className='body'>Creating elegant UI features for SharePoint Online using React and SPFx, and automation solutions using Azure and PowerShell.</div>
+                      <div className='body'>React, AngularJS, Angular 2+, PowerShell, Azure, Sharepoint Online, SPFx</div>
                     </div>
                   </div>
                   <div className='time-point'>
