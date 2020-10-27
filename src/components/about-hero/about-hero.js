@@ -3,7 +3,7 @@ import React from 'react';
 import './about-hero.scss'; 
 import LilSteve from '../../images/lil-deebz.svg';
 
-const RESUME_PATH = '/Stephen Bradley-Resume 10-03-2020.pdf';
+const RESUME_PATH = '/Stephen Bradley Resume.pdf';
 
 const AboutHero = () => (
   <div className='about-hero'>
