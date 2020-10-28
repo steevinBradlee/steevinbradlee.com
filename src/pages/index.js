@@ -35,6 +35,7 @@ export default ({ data }) => {
             {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }, index) => (
               <ArticleTile
                 title={frontmatter.title}
+                date={frontmatter.date}
                 slug={fields.slug}
                 tags={frontmatter.tags}
                 previewText={frontmatter.teaser}
@@ -59,7 +60,7 @@ export const query = graphql`
         id
         frontmatter {
           title
-          date
+          date(formatString: "MM/DD/YYYY")
           tags
           featuredImage {
             childImageSharp {

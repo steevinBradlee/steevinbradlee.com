@@ -26,7 +26,7 @@ const ArticleTile = (props) => (
     <div className='article-title'>
       <Link to={props.slug}>{props.title}</Link>
     </div>
-    <div className='date'>03/07/20</div>
+    <div className='date'>{props.date}</div>
     <FlexContainer>
       {props.tags.map((tag, key) => (
         <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${_.kebabCase(tag)}`}/>
@@ -37,6 +37,7 @@ const ArticleTile = (props) => (
 
 ArticleTile.propTypes = {
   title: PropTypes.string,
+  date: PropTypes.string,
   slug: PropTypes.string,
   image: PropTypes.object,
   tags: PropTypes.array,

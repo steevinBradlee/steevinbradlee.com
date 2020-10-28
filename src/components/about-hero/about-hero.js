@@ -16,8 +16,8 @@ const AboutHero = () => (
       <a href='mailto:stephen.jm.bradley93@gmail.com'>Email</a>
       <span className='spacer'>|</span>
       <a href='https://www.linkedin.com/in/stephenbradley93/'>LinkedIn</a>
-      <span className='spacer'>|</span>
-      <a href={RESUME_PATH}>CV</a>
+      {/* <span className='spacer'>|</span>
+      <a href={RESUME_PATH}>CV</a> */}
     </div>
     <div className='steve-box'>
       <img src={LilSteve} />
@@ -32,8 +32,8 @@ const AboutHero = () => (
         <a href='mailto:step15hen@gmail.com'>Email</a>
         <span className='spacer'>|</span>
         <a href='https://www.linkedin.com/in/stephenbradley93/'>LinkedIn</a>
-        <span className='spacer'>|</span>
-        <a href={RESUME_PATH}>CV</a>
+        {/* <span className='spacer'>|</span>
+        <a href={RESUME_PATH}>CV</a> */}
       </div>
       <div className='steve-box'>
         <img src={LilSteve} />
