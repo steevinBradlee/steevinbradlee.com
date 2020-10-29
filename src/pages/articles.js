@@ -113,6 +113,7 @@ export default ({ data, pageContext }) => {
               <ArticlePreview
                 key={`article-preview-${id}`}
                 title={frontmatter.title}
+                date={frontmatter.date}
                 slug={fields.slug}
                 tags={frontmatter.tags}
                 previewText={frontmatter.teaser ? frontmatter.teaser : excerpt}
@@ -144,7 +145,7 @@ export const query = graphql`
         excerpt(pruneLength: 500)
         frontmatter {
           title
-          date
+          date(formatString: "MM/DD/YYYY")
           tags
           featuredImage {
             childImageSharp {

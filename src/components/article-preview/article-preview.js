@@ -29,7 +29,7 @@ const ArticlePreview = (props) => {
         <div className='article-title'>
           <Link to={props.slug}>{props.title}</Link>
         </div>
-        <div className='date'>03/07/20</div>
+        <div className='date'>{props.date}</div>
         <div className='preview-text'>
           <Dotdotdot clamp={screenWidth > 768 ? 5 : 3}>{props.previewText}</Dotdotdot></div>
         <FlexContainer>
@@ -44,6 +44,7 @@ const ArticlePreview = (props) => {
 
 ArticlePreview.propTypes = {
   title: PropTypes.string,
+  date: PropTypes.string,
   slug: PropTypes.string,
   image: PropTypes.object,
   tags: PropTypes.array,
