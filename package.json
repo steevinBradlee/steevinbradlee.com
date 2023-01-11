@@ -23,7 +23,7 @@
     "gatsby-remark-autolink-headers": "^2.3.13",
     "gatsby-remark-images": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.10",
-    "gatsby-transformer-remark": "^2.8.35",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.5",
     "hamburgers": "^1.1.3",
     "line-awesome": "^1.3.0",
