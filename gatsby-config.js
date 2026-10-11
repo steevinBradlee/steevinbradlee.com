@@ -87,14 +87,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /\.inline\.svg$/
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: `G-BQ0WK11K3S`,

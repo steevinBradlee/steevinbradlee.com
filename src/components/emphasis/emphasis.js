@@ -2,7 +2,7 @@ import React from 'react';
 
 import './emphasis.scss';
 
-import InformationIcon from '../../images/information.inline.svg';
+import InformationIcon from './information-icon';
 
 const Emphasis = (props) => {
   let children = props.children;
