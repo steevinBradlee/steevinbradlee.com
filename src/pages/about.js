@@ -25,7 +25,6 @@ const ResumeContainer = styled.div`
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO title='About' />
       <div className=''>
         <div className='content-center main' style={{paddingBottom: '0px'}}>
           <HeroContainer>
@@ -40,3 +39,5 @@ const AboutPage = () => {
   )
 }
 export default AboutPage;
+
+export const Head = () => <SEO title='About' />;

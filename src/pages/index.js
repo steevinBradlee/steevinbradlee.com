@@ -21,10 +21,9 @@ const HeroContainer = styled.div`
   }
 `;
 
-export default ({ data }) => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title='Home' />
       <div>
         <div className='content-center main'>
           <HeroContainer>
@@ -39,7 +38,7 @@ export default ({ data }) => {
                 slug={fields.slug}
                 tags={frontmatter.tags}
                 previewText={frontmatter.teaser}
-                image={frontmatter.featuredImage ? frontmatter.featuredImage.childImageSharp.fluid : ''}
+                image={frontmatter.featuredImage}
                 key={`article-tile-${index}`}
               />
             ))}
@@ -50,10 +49,14 @@ export default ({ data }) => {
   )
 }
 
+export default IndexPage;
+
+export const Head = () => <SEO title='Home' />;
+
 export const query = graphql`
   query SITE_INDEX_QUERY {
     allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { published: { eq: true } } }
     ) {
       nodes {
@@ -64,9 +67,7 @@ export const query = graphql`
           tags
           featuredImage {
             childImageSharp {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH, breakpoints: [400, 800])
             }
           }
           teaser

@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Tag from '../tag/tag';
-import Dotdotdot from 'react-dotdotdot';
-import useCurrentWitdh from '../../hooks/useCurrentWidth';
 
 const _ = require('lodash');
 
@@ -17,12 +15,13 @@ export const FlexContainer = styled.div`
 `;
 
 const ArticlePreview = (props) => {
-  const screenWidth = useCurrentWitdh();
   return (
     <div className='article-preview' style={props.style ? props.style : {}}>
       <div className='left'>
         <Link to={props.slug}>
-          <Img fluid={props.image} />
+          {props.image &&
+            <GatsbyImage image={getImage(props.image)} alt={props.title} />
+          }
         </Link>
       </div>
       <div className='right'>
@@ -31,7 +30,8 @@ const ArticlePreview = (props) => {
         </div>
         <div className='date'>{props.date}</div>
         <div className='preview-text'>
-          <Dotdotdot clamp={screenWidth > 768 ? 5 : 3}>{props.previewText}</Dotdotdot></div>
+          <div className='preview-text-clamp'>{props.previewText}</div>
+        </div>
         <FlexContainer>
           {props.tags.map((tag, key) => (
             <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${_.kebabCase(tag)}`}/>

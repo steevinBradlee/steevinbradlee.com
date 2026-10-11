@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../../components/layout';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from 'gatsby';
 import SEO from '../../components/seo';
 import useHasMounted from '../../hooks/useHasMounted';
@@ -14,8 +13,8 @@ const headerQuery = `
   .article-mdx-body h3
 `;
 
-const BlogPostTemplate = ({ data, pageContext }) => {
-  const { frontmatter, body } = data.mdx;
+const BlogPostTemplate = ({ data, pageContext, children }) => {
+  const { frontmatter } = data.mdx;
   const { previous, next } = pageContext;
   const hasMounted = useHasMounted();
 
@@ -24,17 +23,8 @@ const BlogPostTemplate = ({ data, pageContext }) => {
     headerElements = Array.from(document.querySelectorAll(headerQuery));
   }
 
-  const image = frontmatter.featuredImage
-    ? frontmatter.featuredImage.childImageSharp.resize
-    : null;
-
   return (
     <Layout>
-      <SEO 
-        title={frontmatter.title} 
-        image={image}
-        description={frontmatter.teaser || frontmatter.excerpt }
-      />
       <div className={`blog-post`}>
         <div className={`header`}>
           <div className='content-center'>
@@ -49,7 +39,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           <div>
             <article className='article-lead'>
               <div className='article-mdx-body'>
-                <MDXRenderer>{body}</MDXRenderer>
+                {children}
               </div>
             </article>
             <aside className={`article-side`}>
@@ -101,10 +91,24 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
 export default BlogPostTemplate;
 
+export const Head = ({ data }) => {
+  const { frontmatter, excerpt } = data.mdx;
+  const image = frontmatter.featuredImage
+    ? frontmatter.featuredImage.childImageSharp.resize
+    : null;
+
+  return (
+    <SEO
+      title={frontmatter.title}
+      image={image}
+      description={frontmatter.teaser || excerpt}
+    />
+  );
+};
+
 export const query = graphql`
   query PostsBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      body
       excerpt(pruneLength: 160)
       frontmatter {
         title
@@ -112,9 +116,6 @@ export const query = graphql`
         teaser
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
             resize {
               src
               height

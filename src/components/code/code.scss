@@ -64,14 +64,3 @@ li > code {
   text-align: center;
   position: relative;
 }
-
-.highlight-line {
-  background-color: rgb(2, 55, 81);
-  border-left: 4px solid rgb(2, 155, 206);
-}
-
-.highlight-line .line-number-style {
-  opacity: 0.5;
-  width: calc(1.2em - 4px);
-  left: -2px;
-}

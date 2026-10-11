@@ -26,7 +26,7 @@ const TagsList = () => {
       query={graphql`
         query TagsQuery {
           allMdx {
-            group(field: frontmatter___tags) {
+            group(field: { frontmatter: { tags: SELECT } }) {
               tag: fieldValue
               totalCount
             }
