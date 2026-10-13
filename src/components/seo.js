@@ -49,7 +49,6 @@ function SEO({ description = ``, image: metaImage, title, children }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <link rel="stylesheet" href="https://use.typekit.net/euj8wqa.css" />
-      <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/css/line-awesome.min.css" />
       {children}
     </>
   )
