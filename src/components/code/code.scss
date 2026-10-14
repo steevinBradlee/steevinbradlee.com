@@ -12,8 +12,9 @@
   margin-bottom: 0;
 }
 
-.token {
-  display: inline-block;
+// Pad the end of each line so long lines don't touch the edge when scrolled
+.token-line {
+  width: max-content;
   padding-right: 1.45rem;
 }
 
