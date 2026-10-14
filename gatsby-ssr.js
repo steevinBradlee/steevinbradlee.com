@@ -51,7 +51,8 @@ const MagicScriptTag = () => {
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />;
 };
 
-export const onRenderBody = ({ setPreBodyComponents }) => {
+export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
+  setHtmlAttributes({ lang: 'en' })
   setPreBodyComponents(<MagicScriptTag />)
 }
 

@@ -12,8 +12,9 @@
   margin-bottom: 0;
 }
 
-.token {
-  display: inline-block;
+// Pad the end of each line so long lines don't touch the edge when scrolled
+.token-line {
+  width: max-content;
   padding-right: 1.45rem;
 }
 
@@ -63,15 +64,4 @@ li > code {
   opacity: 0.3;
   text-align: center;
   position: relative;
-}
-
-.highlight-line {
-  background-color: rgb(2, 55, 81);
-  border-left: 4px solid rgb(2, 155, 206);
-}
-
-.highlight-line .line-number-style {
-  opacity: 0.5;
-  width: calc(1.2em - 4px);
-  left: -2px;
 }

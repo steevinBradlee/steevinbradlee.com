@@ -8,17 +8,13 @@ module.exports = {
     image: '/lil-deebz.png'
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     'gatsby-plugin-styled-components',
-    {
-      resolve: "gatsby-plugin-anchor-links",
-      options: {
-        offset: -102
-      }
-    },
+    // Must also be listed at the top level for gatsby-plugin-mdx v5
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -30,27 +26,6 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: `article-header`
-            }
-          },
-        ],
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -77,27 +52,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Stephen Bradley`,
+        short_name: `Stephen Bradley`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#ffffff`,
+        theme_color: `#021D44`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/lil-deebz.svg`, // This path is relative to the root of the site.
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        rule: {
-          include: /\.inline\.svg$/
-        }
-      }
-    },
-    {
-      resolve: `gatsby-plugin-gtag`,
-      options: {
-        trackingId: `G-BQ0WK11K3S`,
+        trackingIds: [`G-BQ0WK11K3S`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

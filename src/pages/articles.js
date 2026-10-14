@@ -63,7 +63,7 @@ const BigTag = styled.span`
   }
 `;
 
-export default ({ data, pageContext }) => {
+const ArticlesPage = ({ data, pageContext }) => {
   const { tag } = pageContext;
   const [page, setPage] = useState(0);
 
@@ -86,7 +86,6 @@ export default ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title='Articles' />
       <div className=''>
         <div className='content-center main'>
           <div style={{paddingBottom: '23px'}}>
@@ -117,7 +116,7 @@ export default ({ data, pageContext }) => {
                 slug={fields.slug}
                 tags={frontmatter.tags}
                 previewText={frontmatter.teaser ? frontmatter.teaser : excerpt}
-                image={frontmatter.featuredImage.childImageSharp.fluid}
+                image={frontmatter.featuredImage}
               />
             ))}
           </ArticlesContainer >
@@ -134,10 +133,14 @@ export default ({ data, pageContext }) => {
   )
 }
 
+export default ArticlesPage;
+
+export const Head = () => <SEO title='Articles' />;
+
 export const query = graphql`
   query SITE_INDEX_QUERY2 {
     allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { published: { eq: true } } }
     ) {
       nodes {
@@ -149,9 +152,7 @@ export const query = graphql`
           tags
           featuredImage {
             childImageSharp {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: FULL_WIDTH, breakpoints: [400, 800])
             }
           }
           teaser

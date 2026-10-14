@@ -54,6 +54,14 @@
       font-family: $font-primary;
       font-weight: 500;
       line-height: normal;
+
+      > .preview-text-clamp {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        overflow: hidden;
+      }
     }
   }
 }
@@ -80,6 +88,11 @@
       .preview-text {
         padding-bottom: 0px;
         height: 70px;
+
+        > .preview-text-clamp {
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
+        }
       }
 
       .article-tag {

@@ -26,7 +26,7 @@ By default, the ability to create Promoted Links lists, and other Team Collabora
 2. Click *Manage site features*.
 3. Activate *Team Collaboration Lists*.
 
-![Team Colaboration Lists SharePoint site feature](./activate-feature.PNG)
+![Team Colaboration Lists SharePoint site feature](./activate-feature.png)
 
 Return to you site contents and click *+New*. Select Promoted Links list, name your new list, and populate it with whatever links you want.
 
@@ -48,7 +48,7 @@ Depending on the layout you choose for the web part, the JSON schema for setting
 4. Click the *Web part data* button in the top left corner of the page and copy the JSON object from the modal that appears.
 5. Paste this JSON into a new file (web-part-properties.json) in your local working directory.
 
-![SharePoint workbench page with quick links web part properties](./quick-links-properties.PNG)
+![SharePoint workbench page with quick links web part properties](./quick-links-properties.png)
 
 Now it is time to start writing our script for performing our promoted links to quick links transformation.
 
@@ -149,7 +149,7 @@ Add-PnPClientSideWebPart -Page Home -DefaultWebPartType $jsonData.webPartData.pr
 
 If we refresh the page, the quick links web part populated with any test links we added will be present.
 
-![Quick links web part with links created from JSON](./quick-links-finished.PNG)
+![Quick links web part with links created from JSON](./quick-links-finished.png)
 
 Using this technique you can create quick links web parts using any data source, be it promoted links lists, or CSVs of data. The real magic/difficulty, is in figuring out the correct data to populate in the JSON properties object.
 

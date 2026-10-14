@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Tag from '../tag/tag';
 
 const _ = require("lodash");
@@ -19,7 +19,7 @@ const ArticleTile = (props) => (
     <div className='article-image-container' style={{overflow: 'hidden'}}>
       <Link to={props.slug}>
         {props.image &&
-          <Img fluid={props.image} />
+          <GatsbyImage image={getImage(props.image)} alt={props.title} />
         }
       </Link>
     </div>

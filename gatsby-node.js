@@ -13,9 +13,6 @@ exports.createPages = async ({ actions, graphql }) => {
   const blogPostTemplate = path.resolve(
     'src/templates/blog-post/blogPostTemplate.js'
   );
-  const tagsRoundupTemplate = path.resolve(
-    'src/templates/tagsRoundupTemplate.js'
-  );
   const articles = path.resolve(
     'src/pages/articles.js'
   );
@@ -30,10 +27,13 @@ exports.createPages = async ({ actions, graphql }) => {
           frontmatter {
             title
           }
+          internal {
+            contentFilePath
+          }
         }
       }
       tagsGroup: allMdx(limit: 2000) {
-        group(field: frontmatter___tags) {
+        group(field: { frontmatter: { tags: SELECT } }) {
           fieldValue
         }
       }
@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const next = index === 0 ? null : posts[index - 1];
     createPage({
       path: post.fields.slug,
-      component: blogPostTemplate,
+      component: `${blogPostTemplate}?__contentFilePath=${post.internal.contentFilePath}`,
       context: {
         slug: post.fields.slug,
         previous,
