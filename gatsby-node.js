@@ -6,16 +6,14 @@
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require(`path`);
-const _ = require("lodash")
+const _ = require('lodash');
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
-    'src/templates/blog-post/blogPostTemplate.js'
+    'src/templates/blog-post/blogPostTemplate.js',
   );
-  const articles = path.resolve(
-    'src/pages/articles.js'
-  );
+  const articles = path.resolve('src/pages/articles.js');
 
   const result = await graphql(`
     {
@@ -39,7 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `);
-    
+
   if (result.errors) {
     throw result.errors;
   }
@@ -56,13 +54,13 @@ exports.createPages = async ({ actions, graphql }) => {
       context: {
         slug: post.fields.slug,
         previous,
-        next
+        next,
       },
     });
   });
 
   // Extract tag data from query
-  const tags = result.data.tagsGroup.group
+  const tags = result.data.tagsGroup.group;
   // create roundup page for each tag
   tags.forEach(tag => {
     createPage({
@@ -71,7 +69,7 @@ exports.createPages = async ({ actions, graphql }) => {
       context: {
         tag: tag.fieldValue,
       },
-    })
+    });
   });
 };
 

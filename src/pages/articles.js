@@ -72,70 +72,86 @@ const ArticlesPage = ({ data, pageContext }) => {
     articles = data.allMdx.nodes.filter(node => {
       return node.frontmatter.tags.indexOf(tag) > -1;
     });
-  }
-  else {
+  } else {
     articles = data.allMdx.nodes;
   }
-  const changePage = (pageNum) => {
+  const changePage = pageNum => {
     setPage(pageNum);
   };
 
   const numItemsPerPage = 8;
-  const startIndex = (page) * numItemsPerPage;
+  const startIndex = page * numItemsPerPage;
   const endIndex = (page + 1) * numItemsPerPage;
 
   return (
     <Layout>
-      <div className=''>
-        <div className='content-center main'>
-          <div style={{paddingBottom: '23px'}}>
-            <h2 className='area-title' style={{paddingTop: '47px', paddingBottom: '0px'}}>Articles</h2>
-            <div style={{display: 'flex', alignItems: 'center', paddingTop: '15px'}}>
-              {tag &&
+      <div className="">
+        <div className="content-center main">
+          <div style={{ paddingBottom: '23px' }}>
+            <h2
+              className="area-title"
+              style={{ paddingTop: '47px', paddingBottom: '0px' }}
+            >
+              Articles
+            </h2>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingTop: '15px',
+              }}
+            >
+              {tag && (
                 <>
                   <BigTag>
                     <Link to={'/articles'}>
-                      <span>{ tag }</span>
-                      <span><img src={CLOSE_ICON} /></span>
+                      <span>{tag}</span>
+                      <span>
+                        <img src={CLOSE_ICON} alt="Clear tag filter" />
+                      </span>
                     </Link>
                   </BigTag>
-                  <span style={{color: 'var(--color-text)'}}>
-                    <span style={{padding: '0px 10px 0px 3px'}}>|</span>
+                  <span style={{ color: 'var(--color-text)' }}>
+                    <span style={{ padding: '0px 10px 0px 3px' }}>|</span>
                     <span>{`${articles.length} ${articles.length === 1 ? 'article' : 'articles'}`}</span>
                   </span>
                 </>
-              }
+              )}
             </div>
           </div>
           <ArticlesContainer>
-            {articles.slice(startIndex, endIndex).map(({ id, excerpt, frontmatter, fields }) => (
-              <ArticlePreview
-                key={`article-preview-${id}`}
-                title={frontmatter.title}
-                date={frontmatter.date}
-                slug={fields.slug}
-                tags={frontmatter.tags}
-                previewText={frontmatter.teaser ? frontmatter.teaser : excerpt}
-                image={frontmatter.featuredImage}
-              />
-            ))}
-          </ArticlesContainer >
-          <div style={{paddingTop: '56px'}}>
-            <Pagination 
-              numItems={data.allMdx.nodes.length} 
-              numItemsPerPage={numItemsPerPage} 
+            {articles
+              .slice(startIndex, endIndex)
+              .map(({ id, excerpt, frontmatter, fields }) => (
+                <ArticlePreview
+                  key={`article-preview-${id}`}
+                  title={frontmatter.title}
+                  date={frontmatter.date}
+                  slug={fields.slug}
+                  tags={frontmatter.tags}
+                  previewText={
+                    frontmatter.teaser ? frontmatter.teaser : excerpt
+                  }
+                  image={frontmatter.featuredImage}
+                />
+              ))}
+          </ArticlesContainer>
+          <div style={{ paddingTop: '56px' }}>
+            <Pagination
+              numItems={data.allMdx.nodes.length}
+              numItemsPerPage={numItemsPerPage}
               onPageChange={changePage}
             />
           </div>
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export default ArticlesPage;
 
-export const Head = () => <SEO title='Articles' />;
+export const Head = () => <SEO title="Articles" />;
 
 export const query = graphql`
   query SITE_INDEX_QUERY2 {

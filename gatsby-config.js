@@ -4,8 +4,15 @@ module.exports = {
     description: `Tutorials for developer. Focus on front-end development and process automation.`,
     author: `Stephen Bradley`,
     siteUrl: 'https://www.stephen-bradley.com',
-    keywords: ['React', 'Web', 'Development', 'Angular', 'PowerShell', 'Font-End'],
-    image: '/lil-deebz.png'
+    keywords: [
+      'React',
+      'Web',
+      'Development',
+      'Angular',
+      'PowerShell',
+      'Font-End',
+    ],
+    image: '/lil-deebz.png',
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -29,8 +36,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              className: `article-header`
-            }
+              className: `article-header`,
+            },
           },
         ],
       },
@@ -39,14 +46,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,
-        name: `images`
+        name: `images`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/posts`,
-        name: `posts`
+        name: `posts`,
       },
     },
     {
@@ -71,4 +78,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

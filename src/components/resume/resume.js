@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeContext } from '../theme-context';
 
-import './resume.scss'; 
+import './resume.scss';
 
 import InsightDark from '../../images/dark/Insight.png';
 import MicrosoftDark from '../../images/dark/Microsoft.png';
@@ -14,103 +14,138 @@ import AdaptLight from '../../images/light/Adapt.png';
 import TrinityLight from '../../images/light/Trinity.png';
 
 const Resume = () => {
-  const { colorMode, setColorMode } = React.useContext(ThemeContext);
+  const { colorMode } = React.useContext(ThemeContext);
 
   const insightImg = colorMode === 'dark' ? InsightDark : InsightLight;
   const microsoftImg = colorMode === 'dark' ? MicrosoftDark : MicrosoftLight;
   const adaptImg = colorMode === 'dark' ? AdaptDark : AdaptLight;
   const trinityImg = colorMode === 'dark' ? TrinityDark : TrinityLight;
-  
+
   return (
-    <div className='resume'>
-      <div className=''>
-        <div className='content-center'>
-          <h2 className='area-title' style={{paddingTop: '47px'}}>Experience</h2>
-          <div className='experience-rows'>
-            <div className='experience'>
-              <div className='left'>
-                <div className='image-frame'>
-                  <img src={insightImg}/>
+    <div className="resume">
+      <div className="">
+        <div className="content-center">
+          <h2 className="area-title" style={{ paddingTop: '47px' }}>
+            Experience
+          </h2>
+          <div className="experience-rows">
+            <div className="experience">
+              <div className="left">
+                <div className="image-frame">
+                  <img src={insightImg} alt="Insight logo" />
                 </div>
               </div>
-              <div className='right'>
-                <div className='title'>Software Engineer</div>
-                <div className='sub-sub-title'>Insight Enterprises, Productivity Application Services</div>
-                <div className='time-span'>
-                  <div className='time-point'>
+              <div className="right">
+                <div className="title">Software Engineer</div>
+                <div className="sub-sub-title">
+                  Insight Enterprises, Productivity Application Services
+                </div>
+                <div className="time-span">
+                  <div className="time-point">
                     <div>
-                      <div className='sub-title'>Software Engineer</div>
-                      <div className='detail'>Nov 2016 - Oct 2017  | 1 yr</div>
-                      <div className='detail'>Watertown, Massachusetts</div>
-                      <div className='body'>Front-end development and scripting working primarily with React, TypeScript, Node.js, and PowerShell.</div>
-                      <div className='body'>React, AngularJS, Angular 2+, Node.js, PostgreSQL, PowerShell, Azure, Sharepoint Online, SPFx</div>
+                      <div className="sub-title">Software Engineer</div>
+                      <div className="detail">Nov 2016 - Oct 2017 | 1 yr</div>
+                      <div className="detail">Watertown, Massachusetts</div>
+                      <div className="body">
+                        Front-end development and scripting working primarily
+                        with React, TypeScript, Node.js, and PowerShell.
+                      </div>
+                      <div className="body">
+                        React, AngularJS, Angular 2+, Node.js, PostgreSQL,
+                        PowerShell, Azure, Sharepoint Online, SPFx
+                      </div>
                     </div>
                   </div>
-                  <div className='time-point'>
+                  <div className="time-point">
                     <div>
-                      <div className='sub-title'>Associate Software Engineer</div>
-                      <div className='detail'>Nov 2016 - Oct 2017  | 1 yr</div>
-                      <div className='body'></div>
+                      <div className="sub-title">
+                        Associate Software Engineer
+                      </div>
+                      <div className="detail">Nov 2016 - Oct 2017 | 1 yr</div>
+                      <div className="body"></div>
                     </div>
                   </div>
-                  <div className='time-point'>
+                  <div className="time-point">
                     <div>
-                      <div className='sub-title'>Software Engineer Intern</div>
-                      <div className='detail'>Nov 2016 - Oct 2017  | 1 yr</div>
-                      <div className='body'>Creating web components for SharePoint Classic sites with React, AngularJS, and CSS.</div>
+                      <div className="sub-title">Software Engineer Intern</div>
+                      <div className="detail">Nov 2016 - Oct 2017 | 1 yr</div>
+                      <div className="body">
+                        Creating web components for SharePoint Classic sites
+                        with React, AngularJS, and CSS.
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='experience'>
-              <div className='left'>
-                <div className='image-frame'>
-                  <img src={microsoftImg}/>
+            <div className="experience">
+              <div className="left">
+                <div className="image-frame">
+                  <img src={microsoftImg} alt="Microsoft logo" />
                 </div>
               </div>
-              <div className='right'>
-                <div className='title'>Applied Scientist (Computational Linguistics) Intern</div>
-                <div className='sub-sub-title'>Microsoft, Natural Language Experiences Team</div>
-                <div className='detail'>July 2015 - July 2016 | 1 yr</div>
-                <div className='detail'>Microsoft European Development Center, Dublin, Ireland</div>
-                <div className='body'>Aided in research and feasibility studies, language data processing, product testing, bug fixing, and software test design.</div>
-                <div className='body'>C#, Python</div>
+              <div className="right">
+                <div className="title">
+                  Applied Scientist (Computational Linguistics) Intern
+                </div>
+                <div className="sub-sub-title">
+                  Microsoft, Natural Language Experiences Team
+                </div>
+                <div className="detail">July 2015 - July 2016 | 1 yr</div>
+                <div className="detail">
+                  Microsoft European Development Center, Dublin, Ireland
+                </div>
+                <div className="body">
+                  Aided in research and feasibility studies, language data
+                  processing, product testing, bug fixing, and software test
+                  design.
+                </div>
+                <div className="body">C#, Python</div>
               </div>
             </div>
-            <div className='experience'>
-              <div className='left'>
-                <div className='image-frame'>
-                  <img src={adaptImg}/>
+            <div className="experience">
+              <div className="left">
+                <div className="image-frame">
+                  <img src={adaptImg} alt="ADAPT logo" />
                 </div>
               </div>
-              <div className='right'>
-                <div className='title'>Research Assistant (Consulting)</div>
-                <div className='sub-sub-title'>ADAPT Centre</div>
-                <div className='detail'>Mar 2016 - May 2016  | 3 mos</div>
-                <div className='detail'>Dublin, Ireland</div>
-                <div className='body'>Collaborated with a team of researchers at the ADAPT Centre on a project submitted as part of the Blizzard TTS Challenge 2016. My work involved extending the novel-parsing system I created for my final year project in University.</div>
+              <div className="right">
+                <div className="title">Research Assistant (Consulting)</div>
+                <div className="sub-sub-title">ADAPT Centre</div>
+                <div className="detail">Mar 2016 - May 2016 | 3 mos</div>
+                <div className="detail">Dublin, Ireland</div>
+                <div className="body">
+                  Collaborated with a team of researchers at the ADAPT Centre on
+                  a project submitted as part of the Blizzard TTS Challenge
+                  2016. My work involved extending the novel-parsing system I
+                  created for my final year project in University.
+                </div>
               </div>
             </div>
-            <div className='experience'>
-              <div className='left'>
-                <div className='image-frame'>
-                  <img src={trinityImg}/>
+            <div className="experience">
+              <div className="left">
+                <div className="image-frame">
+                  <img src={trinityImg} alt="Trinity College Dublin logo" />
                 </div>
               </div>
-              <div className='right'>
-                <div className='title'>Computer Science, Linguistics, and German</div>
-                <div className='sub-sub-title'>Bachelor of Arts</div>
-                <div className='detail'>Sep 2011 - May 2015  | 4 yrs</div>
-                <div className='detail'>Trinity College Dublin, Ireland</div>
-                <div className='body'>Graduated with a First Class Honours (4.0 GPA). Completed a study abroad year at the University of Saarland in Germany.</div>
+              <div className="right">
+                <div className="title">
+                  Computer Science, Linguistics, and German
+                </div>
+                <div className="sub-sub-title">Bachelor of Arts</div>
+                <div className="detail">Sep 2011 - May 2015 | 4 yrs</div>
+                <div className="detail">Trinity College Dublin, Ireland</div>
+                <div className="body">
+                  Graduated with a First Class Honours (4.0 GPA). Completed a
+                  study abroad year at the University of Saarland in Germany.
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Resume;

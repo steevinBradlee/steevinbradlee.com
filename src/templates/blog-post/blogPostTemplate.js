@@ -5,7 +5,6 @@ import SEO from '../../components/seo';
 import useHasMounted from '../../hooks/useHasMounted';
 import './blog-post-template.scss';
 import TableOfContents from '../../components/table-of-contents/table-of-contents';
-import styled from 'styled-components';
 
 const headerQuery = `
   .article-mdx-body h1,
@@ -15,11 +14,10 @@ const headerQuery = `
 
 const BlogPostTemplate = ({ data, pageContext, children }) => {
   const { frontmatter } = data.mdx;
-  const { previous, next } = pageContext;
   const hasMounted = useHasMounted();
 
   let headerElements;
-  if (hasMounted) { 
+  if (hasMounted) {
     headerElements = Array.from(document.querySelectorAll(headerQuery));
   }
 
@@ -27,62 +25,30 @@ const BlogPostTemplate = ({ data, pageContext, children }) => {
     <Layout>
       <div className={`blog-post`}>
         <div className={`header`}>
-          <div className='content-center'>
-            <h1 className='blog-title'>{frontmatter.title}</h1>
-            {frontmatter.teaser &&
-              <div className='blog-teaser'>{frontmatter.teaser}</div>
-            }
-            <div className='blog-date'>{frontmatter.date}</div>
+          <div className="content-center">
+            <h1 className="blog-title">{frontmatter.title}</h1>
+            {frontmatter.teaser && (
+              <div className="blog-teaser">{frontmatter.teaser}</div>
+            )}
+            <div className="blog-date">{frontmatter.date}</div>
           </div>
         </div>
-        <div className='article-container'>
+        <div className="article-container">
           <div>
-            <article className='article-lead'>
-              <div className='article-mdx-body'>
-                {children}
-              </div>
+            <article className="article-lead">
+              <div className="article-mdx-body">{children}</div>
             </article>
             <aside className={`article-side`}>
-              <div className='side-sticky'>
-                {(headerElements && headerElements.length > 0) &&
-                  <TableOfContents 
-                    headerElements={headerElements} 
+              <div className="side-sticky">
+                {headerElements && headerElements.length > 0 && (
+                  <TableOfContents
+                    headerElements={headerElements}
                     slug={pageContext.slug ? pageContext.slug.slice(0, -1) : ''}
                   />
-                }
+                )}
               </div>
             </aside>
           </div>
-          {/* <div style={{display:'flex'}}>
-            <div style={{width:'50%',display:'flex',justifyContent:'flex-start'}}>
-              {previous === false ? null : (
-                <>
-                  {previous && (
-                    <Link to={previous.fields.slug} style={{textDecoration:'none'}}>
-                      <p>
-                        <div>{'<<'} 👶</div>
-                        <div>{previous.frontmatter.title}</div>
-                      </p>
-                    </Link>
-                  )}
-                </>
-              )}
-            </div>
-            <div style={{width:'50%',display:'flex',justifyContent:'flex-end'}}>
-              {next === false ? null : (
-                <>
-                  {next && (
-                    <Link to={next.fields.slug} style={{textDecoration:'none'}}>
-                      <p>
-                        <div style={{textAlign:'right'}}>🧙‍♂️ {'>>'}</div>
-                        <div>{next.frontmatter.title}</div>
-                      </p>
-                    </Link>
-                  )}
-                </>
-              )}
-            </div>
-          </div> */}
         </div>
       </div>
     </Layout>

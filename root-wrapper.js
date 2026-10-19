@@ -5,7 +5,7 @@ import { ThemeProvider } from './src/components/theme-context';
 import Emphasis from './src/components/emphasis/emphasis';
 
 // MDX 2 renders fenced code as <pre><code className="language-xx">...</code></pre>
-const preToCodeBlock = (preProps) => {
+const preToCodeBlock = preProps => {
   const child = preProps.children;
   if (!child || !child.props || typeof child.props.children !== 'string') {
     return null;
@@ -19,19 +19,16 @@ const preToCodeBlock = (preProps) => {
 
 const components = {
   // Only inline code reaches here; fenced blocks are handled by `pre` below
-  code: props => (
-    <code style={{ backgroundColor: 'lightgray' }} {...props} />
-  ),
+  code: props => <code style={{ backgroundColor: 'lightgray' }} {...props} />,
   pre: preProps => {
-    const props = preToCodeBlock(preProps)
+    const props = preToCodeBlock(preProps);
     if (props) {
-      return <Code {...props} />
-    }
-    else {
-      return <pre {...preProps} />
+      return <Code {...props} />;
+    } else {
+      return <pre {...preProps} />;
     }
   },
-  Emphasis
+  Emphasis,
 };
 
 export const wrapRootElement = ({ element }) => (
