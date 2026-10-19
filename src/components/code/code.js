@@ -9,13 +9,9 @@ require('prismjs/components/prism-powershell');
 
 const Code = ({ codeString, language }) => {
   return (
-    <Highlight
-      code={codeString}
-      language={language}
-      theme={themes.nightOwl}
-    >
+    <Highlight code={codeString} language={language} theme={themes.nightOwl}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div className='gatsby-highlight' data-language={language}>
+        <div className="gatsby-highlight" data-language={language}>
           <pre className={className} style={style}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })}>

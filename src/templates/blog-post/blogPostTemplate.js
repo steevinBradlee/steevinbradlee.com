@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, children }) => {
   const hasMounted = useHasMounted();
 
   let headerElements;
-  if (hasMounted) { 
+  if (hasMounted) {
     headerElements = Array.from(document.querySelectorAll(headerQuery));
   }
 
@@ -27,29 +27,27 @@ const BlogPostTemplate = ({ data, pageContext, children }) => {
     <Layout>
       <div className={`blog-post`}>
         <div className={`header`}>
-          <div className='content-center'>
-            <h1 className='blog-title'>{frontmatter.title}</h1>
-            {frontmatter.teaser &&
-              <div className='blog-teaser'>{frontmatter.teaser}</div>
-            }
-            <div className='blog-date'>{frontmatter.date}</div>
+          <div className="content-center">
+            <h1 className="blog-title">{frontmatter.title}</h1>
+            {frontmatter.teaser && (
+              <div className="blog-teaser">{frontmatter.teaser}</div>
+            )}
+            <div className="blog-date">{frontmatter.date}</div>
           </div>
         </div>
-        <div className='article-container'>
+        <div className="article-container">
           <div>
-            <article className='article-lead'>
-              <div className='article-mdx-body'>
-                {children}
-              </div>
+            <article className="article-lead">
+              <div className="article-mdx-body">{children}</div>
             </article>
             <aside className={`article-side`}>
-              <div className='side-sticky'>
-                {(headerElements && headerElements.length > 0) &&
-                  <TableOfContents 
-                    headerElements={headerElements} 
+              <div className="side-sticky">
+                {headerElements && headerElements.length > 0 && (
+                  <TableOfContents
+                    headerElements={headerElements}
                     slug={pageContext.slug ? pageContext.slug.slice(0, -1) : ''}
                   />
-                }
+                )}
               </div>
             </aside>
           </div>

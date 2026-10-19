@@ -7,7 +7,11 @@ import React from 'react';
 
 // You can delete this file if you're not using it
 import { wrapRootElement as wrap } from './root-wrapper';
-import { COLORS, COLOR_MODE_STORAGE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from './src/consts';
+import {
+  COLORS,
+  COLOR_MODE_STORAGE_KEY,
+  INITIAL_COLOR_MODE_CSS_PROP,
+} from './src/consts';
 
 function setColorsByTheme() {
   const colors = '🌈';
@@ -24,8 +28,7 @@ function setColorsByTheme() {
 
   if (hasUsedToggle) {
     colorMode = persistedPreference;
-  } 
-  else {
+  } else {
     colorMode = prefersDarkFromMQ ? 'dark' : 'light';
   }
 
@@ -47,13 +50,13 @@ const MagicScriptTag = () => {
     .replace('⚡️', INITIAL_COLOR_MODE_CSS_PROP);
 
   let calledFunction = `(${boundFn})()`;
-  
+
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />;
 };
 
 export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
-  setHtmlAttributes({ lang: 'en' })
-  setPreBodyComponents([<MagicScriptTag key='color-mode-script' />])
-}
+  setHtmlAttributes({ lang: 'en' });
+  setPreBodyComponents([<MagicScriptTag key="color-mode-script" />]);
+};
 
 export const wrapRootElement = wrap;

@@ -12,27 +12,31 @@ export const FlexContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const ArticlePreview = (props) => {
+const ArticlePreview = props => {
   return (
-    <div className='article-preview' style={props.style ? props.style : {}}>
-      <div className='left'>
+    <div className="article-preview" style={props.style ? props.style : {}}>
+      <div className="left">
         <Link to={props.slug}>
-          {props.image &&
+          {props.image && (
             <GatsbyImage image={getImage(props.image)} alt={props.title} />
-          }
+          )}
         </Link>
       </div>
-      <div className='right'>
-        <div className='article-title'>
+      <div className="right">
+        <div className="article-title">
           <Link to={props.slug}>{props.title}</Link>
         </div>
-        <div className='date'>{props.date}</div>
-        <div className='preview-text'>
-          <div className='preview-text-clamp'>{props.previewText}</div>
+        <div className="date">{props.date}</div>
+        <div className="preview-text">
+          <div className="preview-text-clamp">{props.previewText}</div>
         </div>
         <FlexContainer>
           {props.tags.map((tag, key) => (
-            <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${kebabCase(tag)}`}/>
+            <Tag
+              key={`tag-${tag}-key`}
+              title={tag}
+              link={`/articles/tags/${kebabCase(tag)}`}
+            />
           ))}
         </FlexContainer>
       </div>
@@ -47,7 +51,7 @@ ArticlePreview.propTypes = {
   image: PropTypes.object,
   tags: PropTypes.array,
   previewText: PropTypes.string,
-  style: PropTypes.object
-}
+  style: PropTypes.object,
+};
 
 export default ArticlePreview;

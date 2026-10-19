@@ -25,33 +25,37 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div>
-        <div className='content-center main'>
+        <div className="content-center main">
           <HeroContainer>
             <IntroHero />
           </HeroContainer>
-          <h2 className='area-title' style={{paddingTop: '47px'}}>Recent Articles</h2>
+          <h2 className="area-title" style={{ paddingTop: '47px' }}>
+            Recent Articles
+          </h2>
           <ArticleTileContainer>
-            {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }, index) => (
-              <ArticleTile
-                title={frontmatter.title}
-                date={frontmatter.date}
-                slug={fields.slug}
-                tags={frontmatter.tags}
-                previewText={frontmatter.teaser}
-                image={frontmatter.featuredImage}
-                key={`article-tile-${index}`}
-              />
-            ))}
+            {data.allMdx.nodes.map(
+              ({ id, excerpt, frontmatter, fields }, index) => (
+                <ArticleTile
+                  title={frontmatter.title}
+                  date={frontmatter.date}
+                  slug={fields.slug}
+                  tags={frontmatter.tags}
+                  previewText={frontmatter.teaser}
+                  image={frontmatter.featuredImage}
+                  key={`article-tile-${index}`}
+                />
+              ),
+            )}
           </ArticleTileContainer>
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export default IndexPage;
 
-export const Head = () => <SEO title='Home' />;
+export const Head = () => <SEO title="Home" />;
 
 export const query = graphql`
   query SITE_INDEX_QUERY {

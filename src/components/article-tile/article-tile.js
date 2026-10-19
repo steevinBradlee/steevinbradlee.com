@@ -13,22 +13,26 @@ export const FlexContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const ArticleTile = (props) => (
-  <div className='article-tile'>
-    <div className='article-image-container' style={{overflow: 'hidden'}}>
+const ArticleTile = props => (
+  <div className="article-tile">
+    <div className="article-image-container" style={{ overflow: 'hidden' }}>
       <Link to={props.slug}>
-        {props.image &&
+        {props.image && (
           <GatsbyImage image={getImage(props.image)} alt={props.title} />
-        }
+        )}
       </Link>
     </div>
-    <div className='article-title'>
+    <div className="article-title">
       <Link to={props.slug}>{props.title}</Link>
     </div>
-    <div className='date'>{props.date}</div>
+    <div className="date">{props.date}</div>
     <FlexContainer>
       {props.tags.map((tag, key) => (
-        <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${kebabCase(tag)}`}/>
+        <Tag
+          key={`tag-${tag}-key`}
+          title={tag}
+          link={`/articles/tags/${kebabCase(tag)}`}
+        />
       ))}
     </FlexContainer>
   </div>
@@ -40,7 +44,7 @@ ArticleTile.propTypes = {
   slug: PropTypes.string,
   image: PropTypes.object,
   tags: PropTypes.array,
-  previewText: PropTypes.string
-}
+  previewText: PropTypes.string,
+};
 
 export default ArticleTile;

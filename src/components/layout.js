@@ -17,18 +17,18 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className='content-wrap'>
+      <div className="content-wrap">
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main className='site-main-content'>{children}</main>
+        <main className="site-main-content">{children}</main>
       </div>
       <Footer />
-      <div id='menuOverlay'></div>
+      <div id="menuOverlay"></div>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

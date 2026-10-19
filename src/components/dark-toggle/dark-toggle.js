@@ -14,22 +14,21 @@ const DarkToggle = () => {
   }
 
   return (
-    <label className={`dark-toggle ${colorMode === 'dark' ? 'dark' : ''}`} >
-      <input 
-        type='checkbox'
+    <label className={`dark-toggle ${colorMode === 'dark' ? 'dark' : ''}`}>
+      <input
+        type="checkbox"
         checked={colorMode === 'dark'}
         onChange={ev => {
           if (ev.target.checked) {
             document.getElementById('onSound').play();
-          }
-          else {
+          } else {
             document.getElementById('offSound').play();
           }
           setColorMode(ev.target.checked ? 'dark' : 'light');
         }}
       />
-      <audio id='onSound' src={ON_SOUND} preload='auto'></audio>
-      <audio id='offSound' src={OFF_SOUND} preload='auto'></audio>
+      <audio id="onSound" src={ON_SOUND} preload="auto"></audio>
+      <audio id="offSound" src={OFF_SOUND} preload="auto"></audio>
     </label>
   );
 };

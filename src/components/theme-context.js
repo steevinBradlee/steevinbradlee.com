@@ -31,11 +31,13 @@ export const ThemeProvider = ({ children }) => {
 
   React.useEffect(() => {
     const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue(initialColorModeCssProp);
+    const initialColorValue = root.style.getPropertyValue(
+      initialColorModeCssProp,
+    );
     rawSetColorMode(initialColorValue);
   }, []);
 
-  const setColorMode = (newValue) => {
+  const setColorMode = newValue => {
     const root = window.document.documentElement;
     window.localStorage.setItem(storageKey, newValue);
     Object.entries(COLORS).forEach(([name, colorByTheme]) => {
@@ -43,11 +45,11 @@ export const ThemeProvider = ({ children }) => {
       root.style.setProperty(cssVarName, colorByTheme[newValue]);
     });
     rawSetColorMode(newValue);
-  }
+  };
 
   return (
-    <ThemeContext.Provider value={{colorMode, setColorMode}}>
-      { children }
+    <ThemeContext.Provider value={{ colorMode, setColorMode }}>
+      {children}
     </ThemeContext.Provider>
   );
-}
+};
