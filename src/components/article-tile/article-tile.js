@@ -4,8 +4,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Tag from '../tag/tag';
-
-const _ = require("lodash");
+import kebabCase from 'lodash/kebabCase';
 
 import './article-tile.scss';
 
@@ -29,7 +28,7 @@ const ArticleTile = (props) => (
     <div className='date'>{props.date}</div>
     <FlexContainer>
       {props.tags.map((tag, key) => (
-        <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${_.kebabCase(tag)}`}/>
+        <Tag key={`tag-${tag}-key`} title={tag} link={`/articles/tags/${kebabCase(tag)}`}/>
       ))}
     </FlexContainer>
   </div>
