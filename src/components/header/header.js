@@ -58,8 +58,8 @@ const Header = ({ siteTitle }) => {
           );
           if (
             yOffset > sticky ||
-            (body.style.top != '' &&
-              parseFloat(body.style.top.replace('px', '')) != 0)
+            (body.style.top !== '' &&
+              parseFloat(body.style.top.replace('px', '')) !== 0)
           ) {
             header.classList.add('sticky');
           } else {

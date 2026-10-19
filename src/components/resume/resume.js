@@ -14,7 +14,7 @@ import AdaptLight from '../../images/light/Adapt.png';
 import TrinityLight from '../../images/light/Trinity.png';
 
 const Resume = () => {
-  const { colorMode, setColorMode } = React.useContext(ThemeContext);
+  const { colorMode } = React.useContext(ThemeContext);
 
   const insightImg = colorMode === 'dark' ? InsightDark : InsightLight;
   const microsoftImg = colorMode === 'dark' ? MicrosoftDark : MicrosoftLight;
@@ -32,7 +32,7 @@ const Resume = () => {
             <div className="experience">
               <div className="left">
                 <div className="image-frame">
-                  <img src={insightImg} />
+                  <img src={insightImg} alt="Insight logo" />
                 </div>
               </div>
               <div className="right">
@@ -81,7 +81,7 @@ const Resume = () => {
             <div className="experience">
               <div className="left">
                 <div className="image-frame">
-                  <img src={microsoftImg} />
+                  <img src={microsoftImg} alt="Microsoft logo" />
                 </div>
               </div>
               <div className="right">
@@ -106,7 +106,7 @@ const Resume = () => {
             <div className="experience">
               <div className="left">
                 <div className="image-frame">
-                  <img src={adaptImg} />
+                  <img src={adaptImg} alt="ADAPT logo" />
                 </div>
               </div>
               <div className="right">
@@ -125,7 +125,7 @@ const Resume = () => {
             <div className="experience">
               <div className="left">
                 <div className="image-frame">
-                  <img src={trinityImg} />
+                  <img src={trinityImg} alt="Trinity College Dublin logo" />
                 </div>
               </div>
               <div className="right">

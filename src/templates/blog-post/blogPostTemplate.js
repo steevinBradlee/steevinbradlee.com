@@ -5,7 +5,6 @@ import SEO from '../../components/seo';
 import useHasMounted from '../../hooks/useHasMounted';
 import './blog-post-template.scss';
 import TableOfContents from '../../components/table-of-contents/table-of-contents';
-import styled from 'styled-components';
 
 const headerQuery = `
   .article-mdx-body h1,
@@ -15,7 +14,6 @@ const headerQuery = `
 
 const BlogPostTemplate = ({ data, pageContext, children }) => {
   const { frontmatter } = data.mdx;
-  const { previous, next } = pageContext;
   const hasMounted = useHasMounted();
 
   let headerElements;
@@ -51,36 +49,6 @@ const BlogPostTemplate = ({ data, pageContext, children }) => {
               </div>
             </aside>
           </div>
-          {/* <div style={{display:'flex'}}>
-            <div style={{width:'50%',display:'flex',justifyContent:'flex-start'}}>
-              {previous === false ? null : (
-                <>
-                  {previous && (
-                    <Link to={previous.fields.slug} style={{textDecoration:'none'}}>
-                      <p>
-                        <div>{'<<'} 👶</div>
-                        <div>{previous.frontmatter.title}</div>
-                      </p>
-                    </Link>
-                  )}
-                </>
-              )}
-            </div>
-            <div style={{width:'50%',display:'flex',justifyContent:'flex-end'}}>
-              {next === false ? null : (
-                <>
-                  {next && (
-                    <Link to={next.fields.slug} style={{textDecoration:'none'}}>
-                      <p>
-                        <div style={{textAlign:'right'}}>🧙‍♂️ {'>>'}</div>
-                        <div>{next.frontmatter.title}</div>
-                      </p>
-                    </Link>
-                  )}
-                </>
-              )}
-            </div>
-          </div> */}
         </div>
       </div>
     </Layout>

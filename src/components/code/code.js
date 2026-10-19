@@ -3,7 +3,6 @@ import { Highlight, Prism, themes } from 'prism-react-renderer';
 import './code.scss';
 
 // prism-react-renderer bundles a limited set of languages; register extras on its Prism instance
-/* global globalThis */
 globalThis.Prism = Prism;
 require('prismjs/components/prism-powershell');
 
@@ -15,7 +14,6 @@ const Code = ({ codeString, language }) => {
           <pre className={className} style={style}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })}>
-                {/* <span className='line-number-style'>{i + 1}</span> */}
                 {line.map((token, key) => (
                   <span key={key} {...getTokenProps({ token })} />
                 ))}

@@ -107,7 +107,7 @@ const ArticlesPage = ({ data, pageContext }) => {
                     <Link to={'/articles'}>
                       <span>{tag}</span>
                       <span>
-                        <img src={CLOSE_ICON} />
+                        <img src={CLOSE_ICON} alt="Clear tag filter" />
                       </span>
                     </Link>
                   </BigTag>
