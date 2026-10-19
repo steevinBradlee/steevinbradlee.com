@@ -53,7 +53,7 @@ const MagicScriptTag = () => {
 
 export const onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
   setHtmlAttributes({ lang: 'en' })
-  setPreBodyComponents(<MagicScriptTag />)
+  setPreBodyComponents([<MagicScriptTag key='color-mode-script' />])
 }
 
 export const wrapRootElement = wrap;
