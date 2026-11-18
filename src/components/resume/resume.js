@@ -2,20 +2,48 @@ import React from 'react';
 import { ThemeContext } from '../theme-context';
 
 import './resume.scss';
+import ClientList from './client-list/client-list';
 
+import DeptDark from '../../images/dark/Dept.png';
 import InsightDark from '../../images/dark/Insight.png';
 import MicrosoftDark from '../../images/dark/Microsoft.png';
 import AdaptDark from '../../images/dark/Adapt.png';
 import TrinityDark from '../../images/dark/Trinity.png';
 
+import DeptLight from '../../images/light/Dept.png';
 import InsightLight from '../../images/light/Insight.png';
 import MicrosoftLight from '../../images/light/Microsoft.png';
 import AdaptLight from '../../images/light/Adapt.png';
 import TrinityLight from '../../images/light/Trinity.png';
 
+const DEPT_CLIENTS = [
+  {
+    name: "Moody's",
+    industry: 'Finance',
+    description:
+      'Full-stack engineer on the user management team, building authentication and authorization platforms and helping lead a new user admin tool.',
+    tech: 'TypeScript, Node.js, React, AWS',
+  },
+  {
+    name: 'Aledade',
+    industry: 'Healthcare',
+    description:
+      'Front-end engineer helping migrate a patient-care web application from AngularJS to Vue.',
+    tech: 'AngularJS, Vue.js, JavaScript, TypeScript',
+  },
+  {
+    name: 'Lovevery',
+    industry: 'E-Commerce',
+    description:
+      'Front-end engineer on the e-commerce site during its move from Shopify to a custom backend and its expansion into the EU, including localization.',
+    tech: 'JavaScript, React, GraphQL',
+  },
+];
+
 const Resume = () => {
   const { colorMode } = React.useContext(ThemeContext);
 
+  const deptImg = colorMode === 'dark' ? DeptDark : DeptLight;
   const insightImg = colorMode === 'dark' ? InsightDark : InsightLight;
   const microsoftImg = colorMode === 'dark' ? MicrosoftDark : MicrosoftLight;
   const adaptImg = colorMode === 'dark' ? AdaptDark : AdaptLight;
@@ -32,6 +60,25 @@ const Resume = () => {
             <div className="experience">
               <div className="left">
                 <div className="image-frame">
+                  <img src={deptImg} alt="DEPT logo" />
+                </div>
+              </div>
+              <div className="right">
+                <div className="title">Senior Software Engineer</div>
+                <div className="sub-sub-title">
+                  DEPT, Global Digital Marketing &amp; Technology Agency
+                </div>
+                <div className="detail">Mar 2021 - Present</div>
+                <div className="body">
+                  Full-stack engineer delivering web platforms for enterprise
+                  and consumer brands across healthcare, finance and e-commerce.
+                </div>
+                <ClientList clients={DEPT_CLIENTS} />
+              </div>
+            </div>
+            <div className="experience">
+              <div className="left">
+                <div className="image-frame">
                   <img src={insightImg} alt="Insight logo" />
                 </div>
               </div>
@@ -44,7 +91,9 @@ const Resume = () => {
                   <div className="time-point">
                     <div>
                       <div className="sub-title">Software Engineer</div>
-                      <div className="detail">Nov 2016 - Oct 2017 | 1 yr</div>
+                      <div className="detail">
+                        Mar 2019 - Mar 2021 | 2 yrs 1 mo
+                      </div>
                       <div className="detail">Watertown, Massachusetts</div>
                       <div className="body">
                         Front-end development and scripting working primarily
@@ -61,7 +110,9 @@ const Resume = () => {
                       <div className="sub-title">
                         Associate Software Engineer
                       </div>
-                      <div className="detail">Nov 2016 - Oct 2017 | 1 yr</div>
+                      <div className="detail">
+                        Dec 2017 - Mar 2019 | 1 yr 4 mos
+                      </div>
                       <div className="body"></div>
                     </div>
                   </div>
